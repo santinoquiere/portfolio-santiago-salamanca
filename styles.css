@@ -1,0 +1,1300 @@
+/* =========================================================
+   PORTFOLIO · Santiago Salamanca Arroyo
+   ========================================================= */
+
+/* ---------- TIPOGRAFÍA ----------
+   Bricolage Grotesque ya está instalada en tu ordenador.
+   Si quieres enlazarla desde un archivo (para que funcione en cualquier
+   ordenador), descomenta y ajusta uno de estos bloques:
+
+   Opción A · desde tus archivos de fuente:
+   @font-face {
+     font-family: 'Bricolage Grotesque';
+     src: url('fonts/BricolageGrotesque-Variable.ttf') format('truetype');
+     font-weight: 200 800;
+     font-stretch: 75% 100%;
+     font-display: swap;
+   }
+
+   Opción B · desde Google Fonts (pon esto en el <head> de cada HTML):
+   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+*/
+@font-face {
+     font-family: 'Bricolage Grotesque';
+     src: url('BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf') format('truetype');
+     font-weight: 200 800;
+     font-stretch: 75% 100%;
+     font-display: swap;
+   }
+/* ---------- VARIABLES ---------- */
+:root {
+  --negro: #151313;
+  --blanco: #F5F8E1;
+  --verde: #ADD8AD;
+
+  --fuente: 'Bricolage Grotesque', system-ui, sans-serif;
+
+  --alto-header: 88px;
+  --margen: clamp(24px, 6vw, 96px);
+  --radio: 8px;
+  --transicion: 0.25s ease;
+}
+
+/* ---------- BASE ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* para que el header sticky no tape los títulos al saltar a un apartado */
+  scroll-padding-top: var(--alto-header);
+}
+
+body {
+  background: var(--negro);
+  color: var(--blanco);
+  font-family: var(--fuente);
+  font-weight: 400;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- CURSOR PERSONALIZADO ----------
+   Dibujado en SVG dentro del propio CSS (no hace falta ningún archivo).
+   Los números tras el url() son el punto exacto que hace clic (el centro).
+   Si prefieres usar tu propio dibujo: cursor: url('img/cursor.png') 16 16, auto;
+   (máximo 128×128 px; mejor 32×32) */
+
+/* Normal: punto verde con borde oscuro */
+ html {
+  cursor: url("cursor\ duende.png") 16 -32, auto;
+}
+
+/* Sobre botones y enlaces: anillo verde más grande con el punto en el centro */
+a, button, .copiar, .boton, .flecha, .hamburguesa {
+  cursor: url("cursor\ duende.png") 16 -32, auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+/* ---------- PLACEHOLDERS DE IMAGEN ----------
+   Cuando tengas las imágenes, cambia el <div class="placeholder"> por
+   <img src="img/tu-imagen.jpg" alt="..."> y mantén las clases de tamaño. */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    repeating-linear-gradient(45deg,
+      rgba(173, 216, 173, 0.08) 0 10px,
+      transparent 10px 20px),
+    #232020;
+  border: 1.5px dashed var(--verde);
+  color: var(--verde);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* ---------- TUS IMÁGENES ----------
+   Para poner una imagen (o un .gif) en un hueco, mete la etiqueta img
+   DENTRO del div del placeholder y borra el texto de relleno:
+
+     <div class="inicio__avatar placeholder"><img src="img/avatar.png" alt="Mi avatar"></div>
+
+   La imagen se adapta al tamaño del hueco y desaparecen las rayas y el borde.
+   object-fit: contain  → se ve entera (logo, avatar)
+   object-fit: cover    → rellena el hueco recortando lo que sobra (galerías) */
+.placeholder:has(img, video) {
+  background: none;
+  border: none;
+}
+
+.placeholder > img,
+.placeholder > video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.galeria .placeholder > img,
+.galeria .placeholder > video {
+  object-fit: cover;
+}
+
+/* Si en vez de eso cambias el div por la img directamente
+   (<img class="inicio__avatar placeholder" src="...">), también respeta el tamaño */
+img.placeholder {
+  display: block;
+  object-fit: contain;
+  background: none;
+  border: none;
+}
+
+.galeria img.placeholder {
+  object-fit: cover;
+}
+
+/* =========================================================
+   HEADER STICKY + MENÚ HAMBURGUESA
+   ========================================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--alto-header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--margen);
+  background: var(--negro);
+  border-bottom: 1px solid rgba(245, 248, 225, 0.08);
+}
+
+.header__logo {
+  width: 80%;  /* mismo tamaño que el botón hamburguesa */
+  height: 80px;
+  border-radius: 50%;
+  font-size: 0.5rem;
+}
+
+/* Botón hamburguesa: al pasar el ratón se intercambian trazo y relleno */
+.hamburguesa {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--verde);
+  border-radius: var(--radio);
+  background: var(--negro);
+  transition: background var(--transicion), border-color var(--transicion);
+}
+
+.hamburguesa svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--verde);
+  stroke-width: 2;
+  stroke-linecap: round;
+  overflow: visible;
+}
+
+.hamburguesa line {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: stroke var(--transicion), transform var(--transicion), opacity var(--transicion);
+}
+
+.hamburguesa:hover,
+.hamburguesa:focus-visible {
+  background: var(--verde);
+}
+
+.hamburguesa:hover svg,
+.hamburguesa:focus-visible svg {
+  stroke: var(--negro);
+}
+
+/* Cuando el menú está abierto, las tres rayas forman una X */
+body:has(.menu:popover-open) .hamburguesa line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+body:has(.menu:popover-open) .hamburguesa line:nth-child(2) { opacity: 0; }
+body:has(.menu:popover-open) .hamburguesa line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* Desplegable (el navegador lo muestra u oculta al pulsar la hamburguesa) */
+.menu {
+  position: fixed;
+  inset: auto;
+  top: calc(var(--alto-header) - 4px);
+  right: var(--margen);
+  margin: 0;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: var(--negro);
+  color: var(--blanco);
+  border: 1px solid rgba(245, 248, 225, 0.15);
+  border-radius: var(--radio);
+}
+
+.menu:popover-open {
+  display: flex;
+  animation: aparecer var(--transicion);
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.menu .boton {
+  min-width: 150px;
+}
+
+/* =========================================================
+   BOTONES (píldora con borde verde)
+   Al pasar el ratón se intercambian los colores.
+   ========================================================= */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em 1.6em;
+  border: 1.5px solid var(--verde);
+  border-radius: var(--radio);
+  background: var(--negro);
+  color: var(--verde);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: background var(--transicion), color var(--transicion);
+}
+
+.boton:hover,
+.boton:focus-visible {
+  background: var(--verde);
+  color: var(--negro);
+}
+
+/* =========================================================
+   FLECHAS (redondas)
+   ========================================================= */
+.flecha {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--verde);
+  border-radius: 50%;
+  background: var(--negro);
+  color: var(--verde);
+  transition: background var(--transicion), color var(--transicion);
+}
+
+.flecha svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 4;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.flecha:hover,
+.flecha:focus-visible {
+  background: var(--verde);
+  color: var(--negro);
+}
+
+/* Flecha que lleva al siguiente apartado (abajo a la derecha de cada sección) */
+.flecha--siguiente {
+  position: absolute;
+  right: var(--margen);
+  bottom: 40px;
+}
+
+/* Flecha para subir al principio de la galería (sticky) */
+.flecha--arriba {
+  position: fixed;
+  right: var(--margen);
+  bottom: 28px;
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+}
+/* Flecha para volver a Proyectos (fija arriba a la derecha, debajo del header) */
+.galeria__cabecera .flecha {
+  position: fixed;
+  top: calc(var(--alto-header) + 16px);
+  right: var(--margen);
+  z-index: 90;
+  width: 44px;   /* mismo tamaño que la flecha de subir */
+  height: 44px;
+}
+
+/* =========================================================
+   SECCIONES DE LA PÁGINA PRINCIPAL
+   Ocupan todo el ancho de la pantalla, solo con el margen lateral.
+   ========================================================= */
+.seccion {
+  position: relative;
+  min-height: calc(100vh - var(--alto-header));
+  padding: 64px var(--margen) 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titulo {
+  font-size: clamp(2.6rem, 9vw, 8rem);
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--blanco);
+  margin-bottom: 32px;
+}
+
+/* Conjunto de botones: todos del mismo ancho (hasta --ancho-boton),
+   más altos y con el texto proporcional al tamaño del botón */
+.grupo-botones {
+  --ancho-boton: 17rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, var(--ancho-boton));
+  gap: clamp(12px, 2.5vw, 36px);
+}
+
+.grupo-botones .boton {
+  padding: 1.5em 0.8em;
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+}
+
+/* ---------- INICIO ----------
+   Capas de detrás a delante: SANTIAGO > ARROYO > avatar > SALAMANCA */
+.inicio {
+  align-items: center;
+}
+
+.inicio__contenido {
+  position: relative;
+  isolation: isolate;
+}
+
+.inicio__nombre {
+  font-size: clamp(2.4rem, 9vw, 9rem);
+  font-weight: 800;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.inicio__nombre span {
+  position: relative;
+  display: block;
+}
+
+.inicio__nombre span:nth-child(1) { z-index: 1; padding-left: 0.9em; } /* Santiago  */
+.inicio__nombre span:nth-child(2) { z-index: 4; }                      /* Salamanca */
+.inicio__nombre span:nth-child(3) { z-index: 2; padding-left: 2.2em; } /* Arroyo    */
+
+.inicio__avatar {
+  position: absolute;
+  z-index: 3;
+  /* height: el doble del alto de las tres líneas del nombre;
+     el ancho sale solo de la proporción de la imagen.
+     top: cuánto sube. -50% lo deja centrado en vertical con el nombre;
+     más negativo (p. ej. -70%) lo sube más, menos negativo (-30%) lo baja. */
+  top: -50%;
+  height: 200%;
+  left: 58%;
+  transform: translateX(-50%);
+  width: auto;
+  aspect-ratio: auto 3 / 4; /* 3:4 en el placeholder; con una img directa usa la proporción de tu imagen */
+  border-radius: 45% 45% 12px 12px;
+  border-style: solid;
+}
+
+/* ---------- SOBRE MÍ ----------
+   Texto seguido (Formación, Experiencia, Intereses) a la izquierda
+   y el gif a la derecha. El gif es "sticky": empieza a la altura de
+   Formación, se queda fijo mientras bajas y se va al llegar a Proyectos. */
+.sobre-mi__contenido {
+  display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); /* texto | gif: sube el 1.5 para un gif más grande */
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+
+.sobre-mi__textos {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 7vw, 96px); /* espacio entre Formación, Experiencia e Intereses */
+}
+
+/* Jerarquía: nombre del apartado grande y en bold, contenido más pequeño y regular */
+.sobre-mi__bloque h3 {
+  color: #F5F8E1;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.sobre-mi__bloque p {
+  max-width: 560px;
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.sobre-mi__bloque p + p {
+  margin-top: 12px;
+}
+
+.sobre-mi__logo {
+  position: sticky;
+  top: calc(var(--alto-header) + 32px); /* distancia al header mientras está fijo */
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 50% 50% 45% 45%;
+}
+
+/* Flecha de Sobre mí: siempre visible al llegar al apartado.
+   En vez de ir pegada al final (que queda fuera de la pantalla porque el
+   apartado es más alto que la ventana), se queda "enganchada" a 40 px del
+   borde de abajo de la pantalla mientras ves el apartado. */
+.sobre-mi .flecha--siguiente {
+  position: sticky;
+  bottom: 40px;
+  right: auto;
+  align-self: flex-end;
+  margin-top: 24px;
+}
+
+/* ---------- PROYECTOS ---------- */
+.proyectos .grupo-botones {
+  grid-auto-flow: row;
+  grid-template-columns: repeat(2, minmax(0, var(--ancho-boton)));
+  margin-top: 16px;
+}
+
+.proyectos .boton {
+  padding: 1.8em 1em;
+}
+
+/* Flecha de Proyectos: igual que la de Sobre mí, se queda enganchada abajo
+   para que se vea al llegar (con la cara, el apartado es más alto que la pantalla) */
+.proyectos .flecha--siguiente {
+  position: sticky;
+  bottom: 40px;
+  right: auto;
+  align-self: flex-end;
+  margin-top: 24px;
+}
+
+/* ---------- CARA CON OJOS QUE SIGUEN EL CURSOR (sin JavaScript) ----------
+   Botones a la izquierda y cara a la derecha, en la misma fila.
+   Alrededor de la cara hay 9 zonas invisibles (3 × 3); las de fuera se estiran
+   hasta los bordes del apartado, así los ojos te siguen por todo Proyectos.
+   Para usar tu dibujo, cambia los fondos por tus PNG (con fondo transparente):
+     .cara    → background: url("cara.png") center / contain no-repeat;   (cara SIN pupilas)
+     .pupila  → background: url("pupila.png") center / contain no-repeat; (una sola pupila) */
+.proyectos {
+  overflow: clip;          /* las zonas invisibles no salen del apartado */
+}
+
+.proyectos__fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 64px);
+}
+
+/* Botones y flecha por encima de las zonas invisibles, para poder pulsarlos */
+.proyectos .grupo-botones {
+  flex: 1 1 auto;
+  pointer-events: none;    /* el hueco entre botones deja pasar el ratón a las zonas */
+}
+
+.proyectos .grupo-botones .boton {
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.proyectos .flecha--siguiente {
+  z-index: 3;
+}
+.cara-zona {
+  position: relative;
+  flex-shrink: 0;
+  width: min(45%, 440px);  /* tamaño de la cara: súbelo para hacerla más grande */
+  aspect-ratio: 1;
+  margin-right: 6%;        /* sepárala del borde: súbelo para moverla más a la izquierda */
+}
+
+.zona {
+  position: absolute;
+  z-index: 2; /* las zonas van por encima para detectar el ratón */
+}
+
+/* Cada zona empieza en la cara y se alarga muchísimo hacia fuera
+   (el apartado la recorta con overflow: clip) */
+.z1 { top: -200vh;   bottom: 66.66%; left: -200vw;  right: 66.66%; } /* arriba-izquierda */
+.z2 { top: -200vh;   bottom: 66.66%; left: 33.33%;  right: 33.33%; } /* arriba */
+.z3 { top: -200vh;   bottom: 66.66%; left: 66.66%;  right: -200vw; } /* arriba-derecha */
+.z4 { top: 33.33%;   bottom: 33.33%; left: -200vw;  right: 66.66%; } /* izquierda */
+.z5 { top: 33.33%;   bottom: 33.33%; left: 33.33%;  right: 33.33%; } /* centro */
+.z6 { top: 33.33%;   bottom: 33.33%; left: 66.66%;  right: -200vw; } /* derecha */
+.z7 { top: 66.66%;   bottom: -200vh; left: -200vw;  right: 66.66%; } /* abajo-izquierda */
+.z8 { top: 66.66%;   bottom: -200vh; left: 33.33%;  right: 33.33%; } /* abajo */
+.z9 { top: 66.66%;   bottom: -200vh; left: 66.66%;  right: -200vw; } /* abajo-derecha */
+
+.cara {
+  position: absolute;
+  inset: 0%;              /* tamaño de la cara dentro del área */
+  z-index: 1;
+  pointer-events: none;
+  background: url("cara.png") center / contain no-repeat;
+}
+
+.ojo {
+  .ojo { outline: 2px solid red; }
+  position: absolute;
+  width: 18%;              /* ancho de la media luna */
+  aspect-ratio: 2 / 1;
+  translate: -50% -50%;    /* left/top marcan el centro del ojo */
+  border-radius: 0 0 999px 999px;
+  overflow: hidden;        /* la pupila no se sale del ojo */
+}
+
+.pupila {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20%;              /* tamaño de la pupila */
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: var(--negro);
+  border-radius: 50%;
+  /* movimiento suave: arranca rápido y frena poco a poco (sube 0.7s para más lento) */
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hacia dónde miran según la zona (z5 es el centro: miran al frente).
+   Si las pupilas se salen del ojo, baja estos porcentajes. */
+.cara-zona:has(.z1:hover) .pupila { transform: translate(-110%, -40%); } /* arriba-izquierda */
+.cara-zona:has(.z2:hover) .pupila { transform: translate(0, -70%); }    /* arriba */
+.cara-zona:has(.z3:hover) .pupila { transform: translate(50%, -50%); }  /* arriba-derecha */
+.cara-zona:has(.z4:hover) .pupila { transform: translate(-120%, 0); }    /* izquierda */
+.cara-zona:has(.z6:hover) .pupila { transform: translate(70%, 0); }     /* derecha */
+.cara-zona:has(.z7:hover) .pupila { transform: translate(-110%, 20%); }  /* abajo-izquierda */
+.cara-zona:has(.z8:hover) .pupila { transform: translate(0, 70%); }     /* abajo */
+.cara-zona:has(.z9:hover) .pupila { transform: translate(50%, 50%); }   /* abajo-derecha */
+
+/* Encima de un botón o de la flecha, los ojos los miran a ellos */
+.proyectos:has(.boton:nth-child(-n+2):hover) .pupila { transform: translate(-115%, -25%); } /* fila de arriba */
+.cara-zona:has(.z1:hover) .pupila { transform: translate(-110%, -40%); } /* arriba-izquierda */
+.cara-zona:has(.z4:hover) .pupila { transform: translate(-120%, 0); }    /* izquierda */
+.cara-zona:has(.z7:hover) .pupila { transform: translate(-110%, 20%); }  /* abajo-izquierda */
+
+.proyectos:has(.boton:nth-child(-n+2):hover) .pupila { transform: translate(-115%, -25%); } /* fila de arriba */
+.proyectos:has(.boton:nth-child(n+3):hover) .pupila  { transform: translate(-115%, 15%); }  /* fila de abajo */
+.proyectos:has(.flecha--siguiente:hover) .pupila     { transform: translate(15%, 70%); }   /* flecha */
+
+/* ---------- CONTACTO ---------- */
+.contacto__lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+}
+
+.contacto__lista strong {
+  font-weight: 600;
+}
+
+/* Un clic selecciona el dato entero (luego Ctrl+C / Cmd+C) */
+.copiar {
+  padding: 2px 6px;
+  margin-left: -6px;
+  border-radius: 4px;
+  -webkit-user-select: all;
+  user-select: all;
+  transition: background var(--transicion), color var(--transicion);
+}
+
+.copiar:hover {
+  background: var(--verde);
+  color: var(--negro);
+}
+
+.copiar::selection {
+  background: var(--blanco);
+  color: var(--negro);
+}
+
+.contacto__pista {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.final {
+  margin-top: 72px;
+}
+
+.final p {
+  max-width: 560px;
+  margin-bottom: 24px;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+}
+
+/* =========================================================
+   GALERÍAS DE PROYECTOS
+   Están en el mismo index.html. Por defecto están ocultas; al pulsar
+   un botón de Proyectos (href="#ilustraciones", etc.) esa galería pasa a
+   ser :target, se muestra, y la página principal se oculta.
+   ========================================================= */
+.galeria {
+  display: none;
+}
+
+.galeria:target,
+.galeria:has(:target) {          /* también cuando hay una foto abierta dentro */
+  display: block;
+}
+
+body:has(.galeria:target, .galeria :target) .principal {
+  display: none;
+}
+
+.galeria {
+  padding: 32px var(--margen) 120px;
+  container-type: inline-size; /* para que la cuadrícula mida sus filas según el ancho */
+}
+
+.galeria__cabecera {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.galeria__cabecera .titulo {
+  margin-bottom: 0;
+  font-size: clamp(2.2rem, 7vw, 6rem);
+}
+
+/* Lista de proyectos en columna (editorial, vídeo, otros) */
+.galeria__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.galeria__item {
+  width: min(100%, 420px);
+  aspect-ratio: 3 / 4;
+}
+
+.galeria__item--video {
+  width: min(200%, 1080px);
+  aspect-ratio: 16 / 9;
+}
+.galeria__item--cuadrado {
+  width: min(100%, 420px);  /* tamaño del gif: bájalo para hacerlo más pequeño */
+  aspect-ratio: 1;
+}
+
+/* Ilustraciones: cuadrícula con huecos de distintos formatos.
+   Cada celda es un cuadrado; cada hueco ocupa una o dos celdas:
+   .formato--cuadrado   1 × 1
+   .formato--vertical   1 ancho × 2 alto
+   .formato--horizontal 2 ancho × 1 alto
+   .formato--grande     2 × 2                                    */
+.galeria__grid {
+  --columnas: 6;
+  --hueco: clamp(16px, 3vw, 40px);
+   --ancho: min(100cqi, 1400px); /* ancho máximo de la galería */
+  width: var(--ancho);
+  display: grid;
+  grid-template-columns: repeat(var(--columnas), 1fr);
+  grid-auto-rows: calc((var(--ancho) - (var(--columnas) - 1) * var(--hueco)) / var(--columnas));
+  grid-auto-flow: dense; /* rellena los huecos que quedan libres */
+  gap: var(--hueco);
+}
+
+.formato--cuadrado   { grid-column: span 2; grid-row: span 2; } /* 1:1, tres por fila */
+.formato--vertical   { grid-column: span 3; grid-row: span 4; } /* 3:4, dos por fila, mitad de ancho */
+.formato--horizontal { grid-column: span 3; grid-row: span 2; } /* 3:2, dos por fila, mitad de ancho */
+.formato--grande     { grid-column: span 3; grid-row: span 3; } /* cuadrada grande, dos por fila */
+
+/* ---------- MENÚ EN ORDENADOR ----------
+   En pantallas grandes no hay hamburguesa: las tres opciones
+   se ven siempre en el header, a la derecha del logo.
+   En móvil (menos de 768px) sigue el menú hamburguesa. */
+@media (min-width: 768px) {
+  .hamburguesa {
+    display: none;
+  }
+/* ---------- HEADER: MÁS ALTO, LOGO Y MENÚ COLOCADOS ---------- */
+:root {
+  --alto-header: 88px;          /* alto del header */
+}
+
+@media (min-width: 768px) {
+  .header > a {
+    margin-left: 4vw;           /* logo: súbelo para moverlo más a la derecha */
+  }
+
+  .nav {
+    position: absolute;
+    left: 50%;                  /* el primer botón empieza en la mitad de la pantalla */
+    top: 50%;
+    translate: 0 -50%;
+  }
+}
+  .menu {
+    display: flex;           /* siempre visible, aunque el popover esté cerrado */
+    position: static;
+    flex-direction: row;
+    gap: 12px;
+    padding: 0;
+    border: 0;
+    background: none;
+    overflow: visible;
+    animation: none;
+  }
+
+  .menu .boton {
+    min-width: 0;
+  }
+}
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 600px) {
+  .galeria__grid {
+    --columnas: 2;
+  }
+
+  .flecha--siguiente {
+    bottom: 24px;
+  }
+
+  /* En móvil el gif de Sobre mí va encima del texto y no se queda fijo */
+  .sobre-mi__contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-mi__logo {
+    position: static;
+    order: -1;
+  }
+
+  /* En móvil la cara va debajo de los botones */
+  .proyectos__fila {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cara-zona {
+    width: min(70%, 260px);
+    margin: 32px auto 0;
+  }
+}
+
+/* =========================================================
+   PROYECTOS: DESTACADOS, TODOS LOS PROYECTOS Y GALERÍA
+   ========================================================= */
+
+/* Los tres botones de Proyectos, uno debajo de otro */
+.proyectos .grupo-botones {
+  grid-template-columns: minmax(0, var(--ancho-boton));
+}
+
+.proyectos .boton,
+#todos .boton {
+  text-align: center;
+}
+
+/* Botones de categorías en "Todos los proyectos" (2 × 2) */
+#todos .grupo-botones {
+  grid-auto-flow: row;
+  grid-template-columns: repeat(2, minmax(0, var(--ancho-boton)));
+}
+
+#todos .boton {
+  padding: 1.8em 1em;
+}
+
+/* ---------- CARTAS DE PROYECTO ----------
+   Imagen de portada, nombre y frase breve. Toda la carta es un enlace. */
+.cartas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.carta {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--verde);
+  border-radius: var(--radio);
+  overflow: hidden;
+  background: var(--negro);
+  transition: background var(--transicion), color var(--transicion);
+}
+
+.carta__imagen {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;        /* la imagen no estira la carta */
+  border: none;
+  border-bottom: 1.5px solid var(--verde);
+}
+
+.galeria .carta .carta__imagen > img {
+  object-fit: cover;       /* la portada rellena su hueco */
+}
+
+.carta__texto {
+  padding: 20px;
+}
+
+.carta__texto h3 {
+  color: var(--verde);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  transition: color var(--transicion);
+}
+
+.carta__texto p {
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+a.carta:hover,
+a.carta:focus-visible {
+  background: var(--verde);
+  color: var(--negro);
+}
+
+a.carta:hover h3,
+a.carta:focus-visible h3 {
+  color: var(--negro);
+}
+
+/* Carta todavía sin proyecto */
+.carta--pendiente {
+  opacity: 0.45;
+  border-style: dashed;
+}
+
+/* ---------- PÁGINA DE CADA PROYECTO ---------- */
+.proyecto__frase {
+  max-width: 720px;
+  margin-bottom: 48px;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+.proyecto__bloque + .proyecto__bloque {
+  margin-top: 64px;
+}
+
+.proyecto__bloque h2 {
+  color: var(--verde);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.proyecto__bloque p {
+  max-width: 720px;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.55;
+}
+
+.proyecto .galeria__item--video {
+  width: min(100%, 1080px);
+}
+
+.proyecto__imagenes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 24px;
+}
+
+.proyecto__imagenes > a {
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+/* ---------- VISOR DE FOTOS (galería y páginas de proyecto) ----------
+   Al pulsar una miniatura, su foto se abre a pantalla completa con el
+   pie de foto debajo. Las fotos están en fila: deslizando (o con las
+   flechas en ordenador) pasas a la anterior o la siguiente.
+   Funciona sin JavaScript: la foto abierta es la de la dirección (#gal-3…). */
+.visor {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;   /* cada deslizamiento para justo en una foto */
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  background: var(--negro);
+}
+
+.visor::-webkit-scrollbar {
+  display: none;
+}
+
+.visor:has(:target) {
+  display: flex;
+}
+
+.visor__foto {
+  position: relative;
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;        /* de una en una */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 72px 16px 110px;        /* abajo deja sitio para la tira de miniaturas */
+}
+
+.visor__foto img {
+  max-width: min(100%, 1200px);
+  max-height: calc(100vh - 260px); /* deja sitio para el pie de foto y las miniaturas */
+  object-fit: contain;
+}
+
+/* Marcas invisibles que usan las flechas para saber hacia dónde deslizar */
+.visor__ancla {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Fila de miniaturas debajo del pie de foto.
+   Cada foto grande lleva su propia fila, colocada para que su miniatura
+   quede siempre en el centro. La fila no se desliza. */
+.visor__foto {
+  --mini: 56px;                    /* tamaño de cada miniatura */
+  --hueco-mini: 8px;
+  overflow: hidden;                /* la fila no asoma en la foto de al lado */
+}
+
+.visor__tira {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  display: flex;
+  gap: var(--hueco-mini);
+  /* mueve la fila para que la miniatura número --i quede en el centro */
+  translate: calc(-1 * ((var(--i) - 1) * (var(--mini) + var(--hueco-mini)) + var(--mini) / 2)) 0;
+}
+
+.visor__tira a {
+  flex: 0 0 auto;
+  width: var(--mini);
+  height: var(--mini);
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: 0.4;
+  transition: opacity var(--transicion);
+}
+
+.visor__tira a:hover {
+  opacity: 0.8;
+}
+
+/* La que se está viendo en grande */
+.visor__tira a.actual {
+  opacity: 1;
+  outline: 2px solid var(--verde);
+  outline-offset: 2px;
+}
+
+.visor__tira img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animación de deslizamiento al cambiar de foto (solo en ordenador;
+   en móvil ya deslizas tú con el dedo) */
+@media (min-width: 768px) {
+  .visor__foto:has(.visor__ancla--der:target) > :is(img, figcaption) {
+    animation: visor-desde-der 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .visor__foto:has(.visor__ancla--izq:target) > :is(img, figcaption) {
+    animation: visor-desde-izq 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .visor__foto:target > :is(img, figcaption) {
+    animation: visor-aparece 0.35s ease;
+  }
+}
+
+@keyframes visor-desde-der {
+  from { transform: translateX(160px); opacity: 0; }
+}
+
+@keyframes visor-desde-izq {
+  from { transform: translateX(-160px); opacity: 0; }
+}
+
+@keyframes visor-aparece {
+  from { transform: scale(0.96); opacity: 0; }
+}
+
+.visor__foto figcaption {
+  max-width: 640px;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--blanco);
+}
+
+.visor__contador {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.visor .flecha {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+}
+
+.visor__cerrar {
+  top: 20px;
+  right: 20px;
+}
+
+.visor__ant,
+.visor__sig {
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.visor__ant { left: 20px; }
+.visor__sig { right: 20px; }
+
+/* =========================================================
+   SOLO MÓVIL (pantallas de menos de 768px)
+   ========================================================= */
+@media (max-width: 767px) {
+  /* Hero: nombre y avatar más grandes (el avatar crece con el nombre) */
+  .inicio__nombre {
+    font-size: 13vw;
+  }
+
+  .inicio__avatar {
+    top: -90%;
+    height: 280%;            /* más alto que en ordenador */
+  }
+
+  /* Proyectos: sin la cara que sigue el cursor (en móvil no hay cursor) */
+  .cara-zona {
+    display: none;
+  }
+
+  /* Ilustraciones: 4 columnas pequeñas para que cada formato quepa entero */
+  .galeria__grid {
+    --columnas: 4;
+  }
+
+  .formato--cuadrado   { grid-column: span 2; grid-row: span 2; } /* media pantalla */
+  .formato--vertical   { grid-column: span 2; grid-row: span 3; } /* media pantalla, 2:3 */
+  .formato--horizontal { grid-column: span 4; grid-row: span 3; } /* ancho completo, 4:3 */
+  .formato--grande     { grid-column: span 4; grid-row: span 4; } /* ancho completo */
+
+  /* Las imágenes se ven enteras, sin recortar */
+  .galeria .placeholder > img {
+    object-fit: contain;
+  }
+
+  /* Los vídeos no se salen de la pantalla */
+  .galeria__item--video {
+    width: 100%;
+  }
+
+  /* Visor: en móvil se pasa de foto deslizando, sin flechas */
+  .visor__ant,
+  .visor__sig {
+    display: none;
+  }
+
+  .visor__foto {
+    --mini: 44px;
+  }
+
+  /* Botones de Proyectos y de categorías a todo el ancho */
+  .proyectos .grupo-botones,
+  #todos .grupo-botones {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Móvil táctil: sin efectos hover. Al pulsar, el botón cambia de color
+   y al soltar vuelve a sus colores originales. */
+@media (max-width: 767px) and (hover: none) {
+  .boton:hover,
+  .flecha:hover {
+    background: var(--negro);
+    color: var(--verde);
+  }
+
+  .hamburguesa:hover {
+    background: var(--negro);
+  }
+
+  .hamburguesa:hover svg {
+    stroke: var(--verde);
+  }
+
+  .copiar:hover {
+    background: none;
+    color: inherit;
+  }
+
+  a.carta:hover {
+    background: var(--negro);
+    color: inherit;
+  }
+
+  a.carta:hover h3 {
+    color: var(--verde);
+  }
+
+  /* Sin transición: el color cambia en cuanto tocas y vuelve en cuanto sueltas */
+  .boton,
+  .flecha,
+  .hamburguesa,
+  .hamburguesa svg,
+  .copiar,
+  .carta,
+  .carta h3 {
+    transition: none;
+  }
+
+  /* Mientras el dedo está pulsando */
+  .boton:active,
+  .flecha:active {
+    background: var(--verde);
+    color: var(--negro);
+  }
+
+  .hamburguesa:active {
+    background: var(--verde);
+  }
+
+  .hamburguesa:active svg {
+    stroke: var(--negro);
+  }
+
+  .copiar:active {
+    background: var(--verde);
+    color: var(--negro);
+  }
+
+  a.carta:active {
+    background: var(--verde);
+    color: var(--negro);
+  }
+
+  a.carta:active h3 {
+    color: var(--negro);
+  }
+
+  /* Sin el recuadro gris que pone el móvil al tocar */
+  a, button, .copiar {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ---------- MURO DE PERSONAJES AL FINAL DE CADA PÁGINA ----------
+   Aparece abajo del todo, ocupando todo el ancho, en la página principal,
+   en cada página de proyectos y en la galería (siempre hay solo una visible).
+   "muro final portfolio web.png" es tu PNG recortado y reducido para la web
+   (el original de 12000 px pesaría mucho en móvil). */
+body {
+  min-height: 100vh;               /* en páginas cortas el muro baja igualmente al fondo */
+  display: flex;
+  flex-direction: column;
+}
+
+body::after {
+  content: "";
+  display: block;
+  aspect-ratio: 2400 / 647;        /* proporción de la imagen */
+  margin-top: auto;                /* siempre pegado abajo del todo */
+  background: url("muro final portfolio web.png") center bottom / 100% auto no-repeat;
+  pointer-events: none;            /* no tapa los clics de lo que haya debajo */
+  position: relative;
+  z-index: 1;
+}
+
+/* En la página principal el muro sube y comparte pantalla con Contacto:
+   Contacto deja abajo un hueco del alto del muro y el muro se mete en él.
+   (Los % de margin y padding se calculan sobre el ancho, igual que el muro.) */
+body:not(:has(.galeria:target, .galeria :target))::after {
+  margin-top: calc(-100% * 647 / 2400);
+}
+
+.contacto {
+  padding-bottom: calc(100% * 647 / 2400 + 40px);
+}
+
+/* Contacto en ordenador: datos a la izquierda y el mensaje final
+   con sus dos botones a la derecha, a la misma altura */
+@media (min-width: 768px) {
+  .contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(32px, 6vw, 96px);
+    align-content: center;
+  }
+
+  .contacto .titulo {
+    grid-column: 1 / -1;
+  }
+
+  .contacto__lista,
+  .contacto__pista {
+    grid-column: 1;
+  }
+
+  .final {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    margin-top: 0;
+  }
+}
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+  

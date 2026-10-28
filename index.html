@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santiago Salamanca Arroyo · Portfolio</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<!-- ontouchstart vacío: no es código, solo hace que el iPhone muestre el color al pulsar -->
+<body ontouchstart="">
+
+  <!-- ===== HEADER STICKY ===== -->
+  <header class="header">
+    <a href="#inicio" aria-label="Ir al inicio">
+      <div class="header__logo placeholder"><img src="LOGO DUENDE ppal.png"></div>
+    </a>
+
+    <!-- Menú hamburguesa sin JavaScript, con el atributo "popover" de HTML:
+         el botón abre y cierra el menú (popovertarget) y al pulsar fuera se cierra solo. -->
+    <nav class="nav">
+      <button class="hamburguesa" popovertarget="menu" aria-label="Abrir menú">
+        <!-- las tres líneas se dibujan en SVG para que tengan exactamente el mismo grosor -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="4" y1="6" x2="20" y2="6"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
+      <div class="menu" id="menu" popover>
+        <a class="boton" href="#sobre-mi">Sobre mí</a>
+        <a class="boton" href="#proyectos">Proyectos</a>
+        <a class="boton" href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== PÁGINA PRINCIPAL =====
+       Se oculta cuando se abre una galería (ver "GALERÍAS" en styles.css) -->
+  <main class="principal">
+
+    <!-- ===== INICIO ===== -->
+    <section class="seccion inicio" id="inicio">
+      <div class="inicio__contenido">
+        <div class="inicio__avatar placeholder"><img src="Autorretratos santi sin suelo.png"></div>
+        <h1 class="inicio__nombre">
+          <span>Santiago</span>
+          <span>Salamanca</span>
+          <span>Arroyo</span>
+        </h1>
+      </div>
+
+      <a class="flecha flecha--siguiente" href="#sobre-mi" aria-label="Ir a Sobre mí">
+        <svg viewBox="0 0 24 24"><path d="M12 4v16M5 13l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== SOBRE MÍ ===== -->
+    <section class="seccion sobre-mi" id="sobre-mi">
+      <h2 class="titulo">Sobre mí</h2>
+
+      <!-- Texto seguido a la izquierda y gif a la derecha.
+           El gif se queda fijo en pantalla mientras bajas por el texto. -->
+      <div class="sobre-mi__contenido">
+        <div class="sobre-mi__textos">
+          <div class="sobre-mi__bloque" id="formacion">
+            <h3>Formación</h3>
+            <p>Estoy estudiando Diseño Transmedia en la universidad La Salle.</p>
+            <p>He realizado dos cursos de ilustración.</p>
+            <p>Manejo programas del paquete de Adobe y manejo los programas del paquete de Microsoft. Sé usar Figma. Tengo conocimientos en manejo de herramientas de producción de vídeo.</p>
+          </div>
+
+          <div class="sobre-mi__bloque" id="experiencia">
+            <h3>Experiencia</h3>
+            <p>Un año como becario en la Escuela de Posgrado de La Salle (principalmente editando vídeos para redes).</p>
+            <p>Un año como becario en la Factoría de La Salle (principalmente editando vídeos para redes y haciendo gestión de las mismas).</p>
+          </div>
+
+          <div class="sobre-mi__bloque" id="intereses">
+            <h3>Intereses</h3>
+            <p>Soy una persona a la que le encanta el mundo de la animación, el contar historias, la ilustración y la producción de vídeo. Trabajo bien en equipo, me adapto bien y aprendo rápido.</p>
+          </div>
+        </div>
+
+        <div class="sobre-mi__logo placeholder"><img src="DUENDE-HERRAMIENTAS-DUERME.gif" sizes="200%"> </div>
+      </div>
+
+      <a class="flecha flecha--siguiente" href="#proyectos" aria-label="Ir a Proyectos">
+        <svg viewBox="0 0 24 24"><path d="M12 4v16M5 13l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== PROYECTOS ===== -->
+    <section class="seccion proyectos" id="proyectos">
+      <h2 class="titulo">Proyectos</h2>
+
+      <!-- Fila: botones a la izquierda y cara a la derecha -->
+      <div class="proyectos__fila">
+      <!-- Cada botón abre su página (más abajo en este mismo archivo) -->
+      <div class="grupo-botones">
+        <a class="boton" href="#destacados">Destacados</a>
+        <a class="boton" href="#todos">Todos los proyectos</a>
+        <a class="boton" href="#galeria">Galería</a>
+      </div>
+
+      <!-- ===== CARA CON OJOS QUE SIGUEN EL CURSOR (sin JavaScript) =====
+           Alrededor de la cara hay 9 zonas invisibles (3 × 3) que se estiran
+           por todo el apartado. Al pasar el ratón por una zona, las pupilas miran hacia ella.
+           Ajusta left / top de cada .ojo para que caigan en tus ojos. -->
+      <div class="cara-zona">
+        <div class="zona z1"></div><div class="zona z2"></div><div class="zona z3"></div>
+        <div class="zona z4"></div><div class="zona z5"></div><div class="zona z6"></div>
+        <div class="zona z7"></div><div class="zona z8"></div><div class="zona z9"></div>
+        <div class="cara">
+        <div class="ojo" style="left: 35.3%; top: 47%;"><div class="pupila"></div></div>
+<div class="ojo" style="left: 60.5%; top: 47%;"><div class="pupila"></div></div>
+        </div>
+      </div>
+      </div>
+
+      <a class="flecha flecha--siguiente" href="#contacto" aria-label="Ir a Contacto">
+        <svg viewBox="0 0 24 24"><path d="M12 4v16M5 13l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="seccion contacto" id="contacto">
+      <h2 class="titulo">Contacto</h2>
+
+      <!-- Sin JavaScript no se puede copiar solo; con un clic se selecciona
+           el dato entero y basta con hacer Ctrl+C / Cmd+C -->
+      <ul class="contacto__lista">
+        <li><strong>Número:</strong> <span class="copiar">+34 689 307 155</span></li>
+        <li><strong>Correo:</strong> <span class="copiar">santiagosalamanca2024@gmail.com</span></li>
+        <li><strong>Instagram:</strong> <span class="copiar">@piojo.dibujitos</span></li>
+      </ul>
+      <p class="contacto__pista">Haz clic en un dato para seleccionarlo y cópialo con Ctrl+C (Cmd+C en Mac).</p>
+
+      <div class="final">
+        <p>¡Vaya! Has llegado al final del portfolio. Si quieres ver otras partes del portfolio, pulsa alguno de estos botones:</p>
+        <div class="grupo-botones">
+          <a class="boton" href="#sobre-mi">Sobre mí</a>
+          <a class="boton" href="#proyectos">Proyectos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       PÁGINAS DE PROYECTOS
+       Están ocultas; cada una aparece (y la página principal se oculta)
+       cuando su id está en la dirección, p. ej. index.html#galeria.
+       Para añadir un proyecto: copia una sección "PROYECTO", cámbiale el id
+       (p. ej. id="p-nuevo") y pon una carta con href="#p-nuevo" donde quieras.
+       ========================================================= -->
+
+    <!-- ===== DESTACADOS =====
+         Para cambiar qué proyectos salen aquí, cambia el href de cada carta
+         por el id de la página del proyecto (p. ej. #p-male-winx). -->
+    <section class="galeria" id="destacados">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Destacados</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#proyectos" aria-label="Volver a Proyectos">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="cartas">
+        <a class="carta" href="#d-male-winx">
+          <div class="carta__imagen placeholder"><img src="male winx_Magic winx.png" alt=""></div>
+          <div class="carta__texto">
+            <h3>Creación de personaje de Winx Club</h3>
+            <p>Proyecto para crear un personaje de Winx Club con sus transformaciones.</p>
+          </div>
+        </a>
+        <a class="carta" href="#d-speculator">
+          <div class="carta__imagen placeholder"><img src="speculator.jpg" alt=""></div>
+          <div class="carta__texto">
+            <h3>Speculator</h3>
+            <p>Proyecto de videojuego basado en el antiguo Imperio Romano.</p>
+          </div>
+        </a>
+        <a class="carta" href="#d-mahou">
+          <div class="carta__imagen placeholder"><img src="mahou.png" alt=""></div>
+          <div class="carta__texto">
+            <h3>Mahou x LaLiga</h3>
+            <p>Proyecto de marketing para unir Mahou y LaLiga.</p>
+          </div>
+        </a>
+        <a class="carta" href="#d-pincho">
+          <div class="carta__imagen placeholder"><img src="PINCHO logo fondo rojo.png" alt=""></div>
+          <div class="carta__texto">
+            <h3>PINCHO</h3>
+            <p>Diseños de estilo pegatina con un tono urbano.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#destacados" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== TODOS LOS PROYECTOS ===== -->
+    <section class="galeria" id="todos">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Todos los<br>proyectos</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#proyectos" aria-label="Volver a Proyectos">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="grupo-botones">
+        <a class="boton" href="#ilustraciones">Ilustraciones</a>
+        <a class="boton" href="#editorial">Editorial</a>
+        <a class="boton" href="#video">Vídeo</a>
+        <a class="boton" href="#otros">Otros</a>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#todos" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== CATEGORÍA: ILUSTRACIONES ===== -->
+    <section class="galeria" id="ilustraciones">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Ilustraciones</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#todos" aria-label="Volver a Todos los proyectos">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="cartas">
+        <a class="carta" href="#p-male-winx">
+          <div class="carta__imagen placeholder"><img src="male winx_Magic winx.png" alt=""></div>
+          <div class="carta__texto">
+            <h3>Creación de personaje de Winx Club</h3>
+            <p>Proyecto para crear un personaje de Winx Club con sus transformaciones.</p>
+          </div>
+        </a>
+        <a class="carta" href="#p-pincho">
+          <div class="carta__imagen placeholder"><img src="PINCHO logo fondo rojo.png" alt=""></div>
+          <div class="carta__texto">
+            <h3>PINCHO</h3>
+            <p>Diseños de estilo pegatina con un tono urbano.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#ilustraciones" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== CATEGORÍA: DISEÑO EDITORIAL ===== -->
+    <section class="galeria" id="editorial">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Diseño<br>editorial</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#todos" aria-label="Volver a Todos los proyectos">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="cartas">
+        <a class="carta" href="#p-cartel">
+          <div class="carta__imagen placeholder"><img src="Cartel tipo.jpg" alt=""></div>
+          <div class="carta__texto">
+            <h3>Cartel tipográfico de canción</h3>
+            <p>Proyecto tipográfico sobre la letra de una canción.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#editorial" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== CATEGORÍA: PRODUCCIÓN DE VÍDEO ===== -->
+    <section class="galeria" id="video">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Producción<br>de vídeo</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#todos" aria-label="Volver a Todos los proyectos">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="cartas">
+        <a class="carta" href="#p-mahou">
+          <div class="carta__imagen placeholder"><img src="mahou.png" alt=""></div>
+          <div class="carta__texto">
+            <h3>Mahou x LaLiga</h3>
+            <p>Proyecto de marketing para unir Mahou y LaLiga.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#video" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== CATEGORÍA: OTROS PROYECTOS ===== -->
+    <section class="galeria" id="otros">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Otros<br>proyectos</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#todos" aria-label="Volver a Todos los proyectos">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="cartas">
+        <a class="carta" href="#p-caminata">
+          <div class="carta__imagen placeholder"><img src="duende anda.gif" alt=""></div>
+          <div class="carta__texto">
+            <h3>Animación de caminata</h3>
+            <p>Animación de un personaje caminando.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#otros" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== GALERÍA =====
+         Cambia la clase formato--… según la forma de cada imagen:
+         formato--cuadrado, formato--vertical, formato--horizontal o formato--grande.
+         Cada miniatura abre su foto en el visor de abajo (mismo número: #gal-1, #gal-2…). -->
+    <section class="galeria" id="galeria">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Galería</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#proyectos" aria-label="Volver a Proyectos">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="galeria__grid">
+        <a class="placeholder formato--grande" id="mini-gal-1" href="#gal-1"><img src="emperador romano.png" alt="Emperador romano" loading="lazy"></a>
+        <a class="placeholder formato--grande" id="mini-gal-2" href="#gal-2"><img src="campesino speculator.png" alt="Campesino speculator" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-3" href="#gal-3"><img src="PINCHO fumón.png" alt="PINCHO fumón" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-4" href="#gal-4"><img src="PINCHO borrachín.png" alt="PINCHO borrachín" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-5" href="#gal-5"><img src="PINCHO meón.png" alt="PINCHO meón" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-6" href="#gal-6"><img src="PINCHO logo fondo rojo.png" alt="PINCHO logo fondo rojo" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-7" href="#gal-7"><img src="male winx_Ropa de calle.png" alt="Male winx_Ropa de calle" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-8" href="#gal-8"><img src="male winx_Magic winx.png" alt="Male winx_Magic winx" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-9" href="#gal-9"><img src="male winx_Believix.png" alt="Male winx_Believix" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-10" href="#gal-10"><img src="male winx_Enchantix.png" alt="Male winx_Enchantix" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-11" href="#gal-11"><img src="male winx_Sirenix final.png" alt="Male winx_Sirenix final" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-12" href="#gal-12"><img src="male winx_Pixie.png" alt="Male winx_Pixie" loading="lazy"></a>
+        <a class="placeholder formato--vertical" id="mini-gal-13" href="#gal-13"><img src="Doodle 1 color.png" alt="Doodle 1 color" loading="lazy"></a>
+        <a class="placeholder formato--vertical" id="mini-gal-14" href="#gal-14"><img src="Animalitos en biblioteca.png" alt="Animalitos en biblioteca" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-15" href="#gal-15"><img src="Doodle 3.png" alt="Doodle 3" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-16" href="#gal-16"><img src="Doodle 4.png" alt="Doodle 4" loading="lazy"></a>
+        <a class="placeholder formato--horizontal" id="mini-gal-17" href="#gal-17"><img src="segundo intento dibujo male.png" alt="Segundo intento dibujo male" loading="lazy"></a>
+        <a class="placeholder formato--horizontal" id="mini-gal-18" href="#gal-18"><img src="lya diabla.png" alt="Lya diabla" loading="lazy"></a>
+        <a class="placeholder formato--horizontal" id="mini-gal-19" href="#gal-19"><img src="LOFI.png" alt="LOFI" loading="lazy"></a>
+        <a class="placeholder formato--horizontal" id="mini-gal-20" href="#gal-20"><img src="habitación collage.png" alt="Habitación collage" loading="lazy"></a>
+        <a class="placeholder formato--horizontal" id="mini-gal-21" href="#gal-21"><img src="escena parque male.png" alt="Escena parque male" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-22" href="#gal-22"><img src="monkey.png" alt="Monkey" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-23" href="#gal-23"><img src="Autorretratos 1.png" alt="Autorretratos 1" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-24" href="#gal-24"><img src="shadow wizard money gang.png" alt="Shadow wizard money gang" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-25" href="#gal-25"><img src="grupito en el metro como animales.png" alt="Grupito en el metro como animales" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-26" href="#gal-26"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="LOGO MARCA PERSONAL SANTIAGO SALAMANCA" loading="lazy"></a>
+        <a class="placeholder formato--horizontal" id="mini-gal-27" href="#gal-27"><img src="Doodle 2.png" alt="Doodle 2" loading="lazy"></a>
+        <a class="placeholder formato--cuadrado" id="mini-gal-28" href="#gal-28"><img src="personajillos animales MONO.png" alt="Personajillos animales MONO" loading="lazy"></a>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="gal-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="gal-1-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-1-der"></span>
+          <img src="emperador romano.png" alt="Emperador romano" loading="lazy">
+          <figcaption>Emperador romano <span class="visor__contador">1 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a class="actual" href="#gal-1"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-der"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-der"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-der"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-der"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-der"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-der"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="gal-2-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-2-der"></span>
+          <img src="campesino speculator.png" alt="Campesino speculator" loading="lazy">
+          <figcaption>Campesino speculator <span class="visor__contador">2 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-2"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-der"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-der"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-der"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-der"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-der"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="gal-3-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-3-der"></span>
+          <img src="PINCHO fumón.png" alt="PINCHO fumón" loading="lazy">
+          <figcaption>PINCHO fumón <span class="visor__contador">3 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-3"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-der"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-der"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-der"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-der"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-4" style="--i: 4">
+          <span class="visor__ancla visor__ancla--izq" id="gal-4-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-4-der"></span>
+          <img src="PINCHO borrachín.png" alt="PINCHO borrachín" loading="lazy">
+          <figcaption>PINCHO borrachín <span class="visor__contador">4 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-4"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-der"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-der"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-der"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-5-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-5" style="--i: 5">
+          <span class="visor__ancla visor__ancla--izq" id="gal-5-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-5-der"></span>
+          <img src="PINCHO meón.png" alt="PINCHO meón" loading="lazy">
+          <figcaption>PINCHO meón <span class="visor__contador">5 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-5"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-der"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-der"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-der"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-5" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-4-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-6-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-6" style="--i: 6">
+          <span class="visor__ancla visor__ancla--izq" id="gal-6-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-6-der"></span>
+          <img src="PINCHO logo fondo rojo.png" alt="PINCHO logo fondo rojo" loading="lazy">
+          <figcaption>PINCHO logo fondo rojo <span class="visor__contador">6 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-6"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-der"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-der"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-6" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-5-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-7-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-7" style="--i: 7">
+          <span class="visor__ancla visor__ancla--izq" id="gal-7-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-7-der"></span>
+          <img src="male winx_Ropa de calle.png" alt="Male winx_Ropa de calle" loading="lazy">
+          <figcaption>Male winx_Ropa de calle <span class="visor__contador">7 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-7"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-der"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-7" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-6-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-8-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-8" style="--i: 8">
+          <span class="visor__ancla visor__ancla--izq" id="gal-8-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-8-der"></span>
+          <img src="male winx_Magic winx.png" alt="Male winx_Magic winx" loading="lazy">
+          <figcaption>Male winx_Magic winx <span class="visor__contador">8 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-8"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-8" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-7-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-9-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-9" style="--i: 9">
+          <span class="visor__ancla visor__ancla--izq" id="gal-9-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-9-der"></span>
+          <img src="male winx_Believix.png" alt="Male winx_Believix" loading="lazy">
+          <figcaption>Male winx_Believix <span class="visor__contador">9 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-9"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-9" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-8-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-10-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-10" style="--i: 10">
+          <span class="visor__ancla visor__ancla--izq" id="gal-10-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-10-der"></span>
+          <img src="male winx_Enchantix.png" alt="Male winx_Enchantix" loading="lazy">
+          <figcaption>Male winx_Enchantix <span class="visor__contador">10 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-10"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-10" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-9-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-11-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-11" style="--i: 11">
+          <span class="visor__ancla visor__ancla--izq" id="gal-11-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-11-der"></span>
+          <img src="male winx_Sirenix final.png" alt="Male winx_Sirenix final" loading="lazy">
+          <figcaption>Male winx_Sirenix final <span class="visor__contador">11 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-11"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-11" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-10-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-12-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-12" style="--i: 12">
+          <span class="visor__ancla visor__ancla--izq" id="gal-12-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-12-der"></span>
+          <img src="male winx_Pixie.png" alt="Male winx_Pixie" loading="lazy">
+          <figcaption>Male winx_Pixie <span class="visor__contador">12 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-12"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-der"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-12" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-11-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-13-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-13" style="--i: 13">
+          <span class="visor__ancla visor__ancla--izq" id="gal-13-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-13-der"></span>
+          <img src="Doodle 1 color.png" alt="Doodle 1 color" loading="lazy">
+          <figcaption>Doodle 1 color <span class="visor__contador">13 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-13"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-der"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-13" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-12-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-14-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-14" style="--i: 14">
+          <span class="visor__ancla visor__ancla--izq" id="gal-14-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-14-der"></span>
+          <img src="Animalitos en biblioteca.png" alt="Animalitos en biblioteca" loading="lazy">
+          <figcaption>Animalitos en biblioteca <span class="visor__contador">14 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-14"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-der"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-14" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-13-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-15-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-15" style="--i: 15">
+          <span class="visor__ancla visor__ancla--izq" id="gal-15-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-15-der"></span>
+          <img src="Doodle 3.png" alt="Doodle 3" loading="lazy">
+          <figcaption>Doodle 3 <span class="visor__contador">15 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-15"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-der"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-15" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-14-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-16-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-16" style="--i: 16">
+          <span class="visor__ancla visor__ancla--izq" id="gal-16-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-16-der"></span>
+          <img src="Doodle 4.png" alt="Doodle 4" loading="lazy">
+          <figcaption>Doodle 4 <span class="visor__contador">16 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-16"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-der"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-16" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-15-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-17-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-17" style="--i: 17">
+          <span class="visor__ancla visor__ancla--izq" id="gal-17-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-17-der"></span>
+          <img src="segundo intento dibujo male.png" alt="Segundo intento dibujo male" loading="lazy">
+          <figcaption>Segundo intento dibujo male <span class="visor__contador">17 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-17"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-der"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-17" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-16-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-18-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-18" style="--i: 18">
+          <span class="visor__ancla visor__ancla--izq" id="gal-18-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-18-der"></span>
+          <img src="lya diabla.png" alt="Lya diabla" loading="lazy">
+          <figcaption>Lya diabla <span class="visor__contador">18 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-izq"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-18"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-der"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-18" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-17-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-19-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-19" style="--i: 19">
+          <span class="visor__ancla visor__ancla--izq" id="gal-19-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-19-der"></span>
+          <img src="LOFI.png" alt="LOFI" loading="lazy">
+          <figcaption>LOFI <span class="visor__contador">19 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-izq"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-izq"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-19"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-der"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-19" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-18-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-20-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-20" style="--i: 20">
+          <span class="visor__ancla visor__ancla--izq" id="gal-20-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-20-der"></span>
+          <img src="habitación collage.png" alt="Habitación collage" loading="lazy">
+          <figcaption>Habitación collage <span class="visor__contador">20 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-izq"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-izq"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-izq"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-20"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-der"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-20" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-19-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-21-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-21" style="--i: 21">
+          <span class="visor__ancla visor__ancla--izq" id="gal-21-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-21-der"></span>
+          <img src="escena parque male.png" alt="Escena parque male" loading="lazy">
+          <figcaption>Escena parque male <span class="visor__contador">21 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-izq"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-izq"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-izq"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-izq"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-21"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-der"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-21" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-20-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-22-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-22" style="--i: 22">
+          <span class="visor__ancla visor__ancla--izq" id="gal-22-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-22-der"></span>
+          <img src="monkey.png" alt="Monkey" loading="lazy">
+          <figcaption>Monkey <span class="visor__contador">22 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-izq"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-izq"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-izq"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-izq"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-izq"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-22"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-der"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-22" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-21-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-23-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-23" style="--i: 23">
+          <span class="visor__ancla visor__ancla--izq" id="gal-23-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-23-der"></span>
+          <img src="Autorretratos 1.png" alt="Autorretratos 1" loading="lazy">
+          <figcaption>Autorretratos 1 <span class="visor__contador">23 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-izq"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-izq"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-izq"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-izq"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-izq"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-izq"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-23"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-der"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-23" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-22-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-24-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-24" style="--i: 24">
+          <span class="visor__ancla visor__ancla--izq" id="gal-24-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-24-der"></span>
+          <img src="shadow wizard money gang.png" alt="Shadow wizard money gang" loading="lazy">
+          <figcaption>Shadow wizard money gang <span class="visor__contador">24 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-izq"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-izq"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-izq"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-izq"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-izq"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-izq"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-izq"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-24"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-der"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-24" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-23-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-25-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-25" style="--i: 25">
+          <span class="visor__ancla visor__ancla--izq" id="gal-25-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-25-der"></span>
+          <img src="grupito en el metro como animales.png" alt="Grupito en el metro como animales" loading="lazy">
+          <figcaption>Grupito en el metro como animales <span class="visor__contador">25 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-izq"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-izq"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-izq"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-izq"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-izq"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-izq"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-izq"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-izq"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-25"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-der"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-25" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-24-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-26-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-26" style="--i: 26">
+          <span class="visor__ancla visor__ancla--izq" id="gal-26-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-26-der"></span>
+          <img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="LOGO MARCA PERSONAL SANTIAGO SALAMANCA" loading="lazy">
+          <figcaption>LOGO MARCA PERSONAL SANTIAGO SALAMANCA <span class="visor__contador">26 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-izq"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-izq"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-izq"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-izq"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-izq"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-izq"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-izq"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-izq"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-izq"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-26"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-der"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-26" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-25-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-27-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-27" style="--i: 27">
+          <span class="visor__ancla visor__ancla--izq" id="gal-27-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-27-der"></span>
+          <img src="Doodle 2.png" alt="Doodle 2" loading="lazy">
+          <figcaption>Doodle 2 <span class="visor__contador">27 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-izq"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-izq"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-izq"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-izq"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-izq"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-izq"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-izq"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-izq"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-izq"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-izq"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-27"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a href="#gal-28-der"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-27" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-26-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#gal-28-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="gal-28" style="--i: 28">
+          <span class="visor__ancla visor__ancla--izq" id="gal-28-izq"></span><span class="visor__ancla visor__ancla--der" id="gal-28-der"></span>
+          <img src="personajillos animales MONO.png" alt="Personajillos animales MONO" loading="lazy">
+          <figcaption>Personajillos animales MONO <span class="visor__contador">28 / 28</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#gal-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#gal-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#gal-3-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#gal-4-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#gal-5-izq"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#gal-6-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#gal-7-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#gal-8-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#gal-9-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#gal-10-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#gal-11-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#gal-12-izq"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#gal-13-izq"><img src="Doodle 1 color.png" alt="" loading="lazy"></a>
+            <a href="#gal-14-izq"><img src="Animalitos en biblioteca.png" alt="" loading="lazy"></a>
+            <a href="#gal-15-izq"><img src="Doodle 3.png" alt="" loading="lazy"></a>
+            <a href="#gal-16-izq"><img src="Doodle 4.png" alt="" loading="lazy"></a>
+            <a href="#gal-17-izq"><img src="segundo intento dibujo male.png" alt="" loading="lazy"></a>
+            <a href="#gal-18-izq"><img src="lya diabla.png" alt="" loading="lazy"></a>
+            <a href="#gal-19-izq"><img src="LOFI.png" alt="" loading="lazy"></a>
+            <a href="#gal-20-izq"><img src="habitación collage.png" alt="" loading="lazy"></a>
+            <a href="#gal-21-izq"><img src="escena parque male.png" alt="" loading="lazy"></a>
+            <a href="#gal-22-izq"><img src="monkey.png" alt="" loading="lazy"></a>
+            <a href="#gal-23-izq"><img src="Autorretratos 1.png" alt="" loading="lazy"></a>
+            <a href="#gal-24-izq"><img src="shadow wizard money gang.png" alt="" loading="lazy"></a>
+            <a href="#gal-25-izq"><img src="grupito en el metro como animales.png" alt="" loading="lazy"></a>
+            <a href="#gal-26-izq"><img src="LOGO MARCA PERSONAL SANTIAGO SALAMANCA.png" alt="" loading="lazy"></a>
+            <a href="#gal-27-izq"><img src="Doodle 2.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#gal-28"><img src="personajillos animales MONO.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-gal-28" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#gal-27-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+        </figure>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#galeria" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== PROYECTO: WINX CLUB ===== -->
+    <section class="galeria proyecto" id="p-male-winx">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Creación de personaje de Winx Club</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#ilustraciones" aria-label="Volver a Ilustraciones">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Proyecto para crear un personaje de Winx Club con sus transformaciones.</p>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>El objetivo era crear un personaje de la serie infantil animada Winx Club. Entre los requisitos estaban que el personaje vistiese al estilo Y2K, y que utilizase tonos tierra. Creé el personaje con ropa de calle y la transformación primaria (magic winx). Derivada de esta, hice la transformación Enchantix. Para Believix y Sirenix, me permití experimentar más con los colores y la moda, sin dejar de perder la esencia del personaje. Finalmente, hice la pixie (las pixies son hadas que acompañan a las protagonistas) que acompañaría al personaje. Fue muy interesante investigar la moda Y2K y la serie de Winx Club, puesto que no tenía mucho conocimiento de ninguno de estos ámbitos.</p>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Imágenes</h2>
+        <div class="proyecto__imagenes">
+        <a class="placeholder" id="mini-male-winx-1" href="#male-winx-1"><img src="male winx_Ropa de calle.png" alt="Male winx_Ropa de calle" loading="lazy"></a>
+        <a class="placeholder" id="mini-male-winx-2" href="#male-winx-2"><img src="male winx_Magic winx.png" alt="Male winx_Magic winx" loading="lazy"></a>
+        <a class="placeholder" id="mini-male-winx-3" href="#male-winx-3"><img src="male winx_Enchantix.png" alt="Male winx_Enchantix" loading="lazy"></a>
+        <a class="placeholder" id="mini-male-winx-4" href="#male-winx-4"><img src="male winx_Believix.png" alt="Male winx_Believix" loading="lazy"></a>
+        <a class="placeholder" id="mini-male-winx-5" href="#male-winx-5"><img src="male winx_Sirenix final.png" alt="Male winx_Sirenix final" loading="lazy"></a>
+        <a class="placeholder" id="mini-male-winx-6" href="#male-winx-6"><img src="male winx_Pixie.png" alt="Male winx_Pixie" loading="lazy"></a>
+        </div>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="male-winx-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="male-winx-1-izq"></span><span class="visor__ancla visor__ancla--der" id="male-winx-1-der"></span>
+          <img src="male winx_Ropa de calle.png" alt="Male winx_Ropa de calle" loading="lazy">
+          <figcaption>Male winx_Ropa de calle <span class="visor__contador">1 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a class="actual" href="#male-winx-1"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-2-der"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-3-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-4-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-male-winx-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#male-winx-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="male-winx-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="male-winx-2-izq"></span><span class="visor__ancla visor__ancla--der" id="male-winx-2-der"></span>
+          <img src="male winx_Magic winx.png" alt="Male winx_Magic winx" loading="lazy">
+          <figcaption>Male winx_Magic winx <span class="visor__contador">2 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#male-winx-2"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-3-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-4-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-male-winx-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#male-winx-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#male-winx-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="male-winx-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="male-winx-3-izq"></span><span class="visor__ancla visor__ancla--der" id="male-winx-3-der"></span>
+          <img src="male winx_Enchantix.png" alt="Male winx_Enchantix" loading="lazy">
+          <figcaption>Male winx_Enchantix <span class="visor__contador">3 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#male-winx-3"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-4-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-male-winx-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#male-winx-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#male-winx-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="male-winx-4" style="--i: 4">
+          <span class="visor__ancla visor__ancla--izq" id="male-winx-4-izq"></span><span class="visor__ancla visor__ancla--der" id="male-winx-4-der"></span>
+          <img src="male winx_Believix.png" alt="Male winx_Believix" loading="lazy">
+          <figcaption>Male winx_Believix <span class="visor__contador">4 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-3-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#male-winx-4"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-male-winx-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#male-winx-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#male-winx-5-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="male-winx-5" style="--i: 5">
+          <span class="visor__ancla visor__ancla--izq" id="male-winx-5-izq"></span><span class="visor__ancla visor__ancla--der" id="male-winx-5-der"></span>
+          <img src="male winx_Sirenix final.png" alt="Male winx_Sirenix final" loading="lazy">
+          <figcaption>Male winx_Sirenix final <span class="visor__contador">5 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-3-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-4-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#male-winx-5"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-male-winx-5" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#male-winx-4-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#male-winx-6-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="male-winx-6" style="--i: 6">
+          <span class="visor__ancla visor__ancla--izq" id="male-winx-6-izq"></span><span class="visor__ancla visor__ancla--der" id="male-winx-6-der"></span>
+          <img src="male winx_Pixie.png" alt="Male winx_Pixie" loading="lazy">
+          <figcaption>Male winx_Pixie <span class="visor__contador">6 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-3-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-4-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#male-winx-5-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#male-winx-6"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-male-winx-6" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#male-winx-5-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+        </figure>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#p-male-winx" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== PROYECTO: PINCHO ===== -->
+    <section class="galeria proyecto" id="p-pincho">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">PINCHO</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#ilustraciones" aria-label="Volver a Ilustraciones">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Diseños de estilo pegatina con un tono urbano.</p>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>El objetivo del proyecto era crear una serie de ilustraciones que podrían ser pegatinas. Quería que tuviera un tono urbano, callejero. Inventé al personaje Pincho, y lo puse en situaciones que se ajustasen a la temática. Quería que fuera un personaje rebelde, y un poco sucio. Por eso le puse ese efecto de ruido blanco en algunas partes de las ilustraciones. Elegí el nombre "Pincho" porque los pinchos son un elemento estético de la cultura punky, que representa muy bien la personalidad que quería que tuviera el proyecto y era un nombre fácil y pegadizo para poder hacer un diseño tipográfico.</p>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Imágenes</h2>
+        <div class="proyecto__imagenes">
+        <a class="placeholder" id="mini-pincho-1" href="#pincho-1"><img src="PINCHO logo fondo rojo.png" alt="PINCHO logo fondo rojo" loading="lazy"></a>
+        <a class="placeholder" id="mini-pincho-2" href="#pincho-2"><img src="PINCHO fumón.png" alt="PINCHO fumón" loading="lazy"></a>
+        <a class="placeholder" id="mini-pincho-3" href="#pincho-3"><img src="PINCHO borrachín.png" alt="PINCHO borrachín" loading="lazy"></a>
+        <a class="placeholder" id="mini-pincho-4" href="#pincho-4"><img src="PINCHO meón.png" alt="PINCHO meón" loading="lazy"></a>
+        </div>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="pincho-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="pincho-1-izq"></span><span class="visor__ancla visor__ancla--der" id="pincho-1-der"></span>
+          <img src="PINCHO logo fondo rojo.png" alt="PINCHO logo fondo rojo" loading="lazy">
+          <figcaption>PINCHO logo fondo rojo <span class="visor__contador">1 / 4</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a class="actual" href="#pincho-1"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#pincho-2-der"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#pincho-3-der"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#pincho-4-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-pincho-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#pincho-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="pincho-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="pincho-2-izq"></span><span class="visor__ancla visor__ancla--der" id="pincho-2-der"></span>
+          <img src="PINCHO fumón.png" alt="PINCHO fumón" loading="lazy">
+          <figcaption>PINCHO fumón <span class="visor__contador">2 / 4</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#pincho-1-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#pincho-2"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#pincho-3-der"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#pincho-4-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-pincho-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#pincho-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#pincho-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="pincho-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="pincho-3-izq"></span><span class="visor__ancla visor__ancla--der" id="pincho-3-der"></span>
+          <img src="PINCHO borrachín.png" alt="PINCHO borrachín" loading="lazy">
+          <figcaption>PINCHO borrachín <span class="visor__contador">3 / 4</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#pincho-1-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#pincho-2-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#pincho-3"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#pincho-4-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-pincho-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#pincho-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#pincho-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="pincho-4" style="--i: 4">
+          <span class="visor__ancla visor__ancla--izq" id="pincho-4-izq"></span><span class="visor__ancla visor__ancla--der" id="pincho-4-der"></span>
+          <img src="PINCHO meón.png" alt="PINCHO meón" loading="lazy">
+          <figcaption>PINCHO meón <span class="visor__contador">4 / 4</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#pincho-1-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#pincho-2-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#pincho-3-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#pincho-4"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-pincho-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#pincho-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+        </figure>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#p-pincho" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== PROYECTO: CARTEL TIPOGRÁFICO ===== -->
+    <section class="galeria proyecto" id="p-cartel">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Cartel tipográfico de canción</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#editorial" aria-label="Volver a Diseño editorial">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Proyecto tipográfico sobre la letra de una canción.</p>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>La premisa era elegir una canción y hacer un cartel tipográfico (usando solo texto) que reflejara lo que quería representar la canción. Había que usar además la tipografía Helvetica. Yo elegí el estribillo de "Mitad y mitad" de Kase.O, una canción de rap español que habla de amor y de relaciones sexuales. Utilicé el verde y el blanco por ser los colores del álbum de esta canción ("El Círculo"), y representé los juegos que hacía Kase.O con los versos.</p>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Imágenes</h2>
+        <div class="proyecto__imagenes">
+        <a class="placeholder" id="mini-cartel-1" href="#cartel-1"><img src="Cartel tipo.jpg" alt="Cartel tipo" loading="lazy"></a>
+        </div>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="cartel-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="cartel-1-izq"></span><span class="visor__ancla visor__ancla--der" id="cartel-1-der"></span>
+          <img src="Cartel tipo.jpg" alt="Cartel tipo" loading="lazy">
+          <figcaption>Cartel tipo <span class="visor__contador">1 / 1</span></figcaption>
+          <a class="flecha visor__cerrar" href="#mini-cartel-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+        </figure>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#p-cartel" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== PROYECTO: MAHOU X LALIGA ===== -->
+    <section class="galeria proyecto" id="p-mahou">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Mahou x LaLiga</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#video" aria-label="Volver a Producción de vídeo">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Proyecto de marketing para unir Mahou y LaLiga.</p>
+
+      <div class="proyecto__bloque">
+        <div class="galeria__item galeria__item--video placeholder"><video src="Mahou.mp4" controls preload="metadata"></video></div>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>Dentro del proyecto de marketing, yo estaba encargado de hacer un vídeo a modo de mock-up. Tuvimos que diseñar el fondo de temática de Mahou, hacer un anuncio con vídeos originales (sin que fueran de stock), y además de montar el anuncio, hacer la transición del partido al anuncio. La idea era que el vídeo se reproduciría en el descanso del partido, ya que Mahou patrocinaría LaLiga. Como el copy de la campaña era "No basta un estadio para contenernos", quisimos plasmar cómo tanto el fútbol y Mahou cobraban vida fuera del estadio de fútbol, en casa, en bares y demás sitios de encuentro.</p>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#p-mahou" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== PROYECTO: ANIMACIÓN DE CAMINATA ===== -->
+    <section class="galeria proyecto" id="p-caminata">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Animación de caminata</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#otros" aria-label="Volver a Otros proyectos">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Animación de un personaje caminando.</p>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>El ejercicio consistía en hacer un personaje andando en bucle, con un fondo animado también. Quise juntar dos intereses personales, la fantasía y el mundo urbano (como se puede ver en muchos proyectos de mi portfolio), así que decidí hacer un duende caminando por una calle de barrio bajo. Adicionalmente, añadí un gnomo y mensajes/grafitis para darle más personalidad al fondo. Una vez acabado, me pareció que se podía mejorar, así que añadí los cambios de color del duende para hacer la animación más llamativa e interesante.</p>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Imágenes</h2>
+        <div class="proyecto__imagenes">
+        <a class="placeholder" id="mini-caminata-1" href="#caminata-1"><img src="duende anda.gif" alt="Duende anda" loading="lazy"></a>
+        </div>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="caminata-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="caminata-1-izq"></span><span class="visor__ancla visor__ancla--der" id="caminata-1-der"></span>
+          <img src="duende anda.gif" alt="Duende anda" loading="lazy">
+          <figcaption>Duende anda <span class="visor__contador">1 / 1</span></figcaption>
+          <a class="flecha visor__cerrar" href="#mini-caminata-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+        </figure>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#p-caminata" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== DESTACADO: WINX CLUB (copia que vuelve a Destacados; si cambias el texto, cámbialo también en su categoría) ===== -->
+    <section class="galeria proyecto" id="d-male-winx">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Creación de personaje de Winx Club</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#destacados" aria-label="Volver a Destacados">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Proyecto para crear un personaje de Winx Club con sus transformaciones.</p>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>El objetivo era crear un personaje de la serie infantil animada Winx Club. Entre los requisitos estaban que el personaje vistiese al estilo Y2K, y que utilizase tonos tierra. Creé el personaje con ropa de calle y la transformación primaria (magic winx). Derivada de esta, hice la transformación Enchantix. Para Believix y Sirenix, me permití experimentar más con los colores y la moda, sin dejar de perder la esencia del personaje. Finalmente, hice la pixie (las pixies son hadas que acompañan a las protagonistas) que acompañaría al personaje. Fue muy interesante investigar la moda Y2K y la serie de Winx Club, puesto que no tenía mucho conocimiento de ninguno de estos ámbitos.</p>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Imágenes</h2>
+        <div class="proyecto__imagenes">
+        <a class="placeholder" id="mini-d-male-winx-1" href="#d-male-winx-1"><img src="male winx_Ropa de calle.png" alt="Male winx_Ropa de calle" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-male-winx-2" href="#d-male-winx-2"><img src="male winx_Magic winx.png" alt="Male winx_Magic winx" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-male-winx-3" href="#d-male-winx-3"><img src="male winx_Enchantix.png" alt="Male winx_Enchantix" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-male-winx-4" href="#d-male-winx-4"><img src="male winx_Believix.png" alt="Male winx_Believix" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-male-winx-5" href="#d-male-winx-5"><img src="male winx_Sirenix final.png" alt="Male winx_Sirenix final" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-male-winx-6" href="#d-male-winx-6"><img src="male winx_Pixie.png" alt="Male winx_Pixie" loading="lazy"></a>
+        </div>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="d-male-winx-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-1-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-1-der"></span>
+          <img src="male winx_Ropa de calle.png" alt="Male winx_Ropa de calle" loading="lazy">
+          <figcaption>Male winx_Ropa de calle <span class="visor__contador">1 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a class="actual" href="#d-male-winx-1"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-2-der"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-3-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-4-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-male-winx-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#d-male-winx-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-male-winx-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-2-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-2-der"></span>
+          <img src="male winx_Magic winx.png" alt="Male winx_Magic winx" loading="lazy">
+          <figcaption>Male winx_Magic winx <span class="visor__contador">2 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-male-winx-2"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-3-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-4-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-male-winx-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-male-winx-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-male-winx-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-male-winx-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-3-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-3-der"></span>
+          <img src="male winx_Enchantix.png" alt="Male winx_Enchantix" loading="lazy">
+          <figcaption>Male winx_Enchantix <span class="visor__contador">3 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-male-winx-3"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-4-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-male-winx-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-male-winx-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-male-winx-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-male-winx-4" style="--i: 4">
+          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-4-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-4-der"></span>
+          <img src="male winx_Believix.png" alt="Male winx_Believix" loading="lazy">
+          <figcaption>Male winx_Believix <span class="visor__contador">4 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-3-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-male-winx-4"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-male-winx-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-male-winx-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-male-winx-5-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-male-winx-5" style="--i: 5">
+          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-5-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-5-der"></span>
+          <img src="male winx_Sirenix final.png" alt="Male winx_Sirenix final" loading="lazy">
+          <figcaption>Male winx_Sirenix final <span class="visor__contador">5 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-3-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-4-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-male-winx-5"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-male-winx-5" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-male-winx-4-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-male-winx-6-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-male-winx-6" style="--i: 6">
+          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-6-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-6-der"></span>
+          <img src="male winx_Pixie.png" alt="Male winx_Pixie" loading="lazy">
+          <figcaption>Male winx_Pixie <span class="visor__contador">6 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-3-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-4-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
+            <a href="#d-male-winx-5-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-male-winx-6"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-male-winx-6" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-male-winx-5-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+        </figure>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#d-male-winx" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== DESTACADO: SPECULATOR ===== -->
+    <section class="galeria proyecto" id="d-speculator">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Speculator</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#destacados" aria-label="Volver a Destacados">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Proyecto de videojuego basado en el antiguo Imperio Romano.</p>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>El objetivo era hacer un videojuego de toma de decisiones (parecido al Reign en cuanto a gameplay) ambientado en el antiguo Imperio Romano que girara en torno a la figura del speculator (un tipo de soldado de inteligencia). Estuve encargado de la dirección de arte, y desarrollé bastantes ilustraciones (personajes, fondos, iconos...).</p>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Imágenes</h2>
+        <div class="proyecto__imagenes">
+        <a class="placeholder" id="mini-d-speculator-1" href="#d-speculator-1"><img src="emperador romano.png" alt="Emperador romano" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-speculator-2" href="#d-speculator-2"><img src="campesino speculator.png" alt="Campesino speculator" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-speculator-3" href="#d-speculator-3"><img src="Fondo senado speculator.png" alt="Fondo senado speculator" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-speculator-4" href="#d-speculator-4"><img src="fondo britania speculator.png" alt="Fondo britania speculator" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-speculator-5" href="#d-speculator-5"><img src="fondo ostia speculator.png" alt="Fondo ostia speculator" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-speculator-6" href="#d-speculator-6"><img src="speculator personaje.png" alt="Speculator personaje" loading="lazy"></a>
+        </div>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="d-speculator-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="d-speculator-1-izq"></span><span class="visor__ancla visor__ancla--der" id="d-speculator-1-der"></span>
+          <img src="emperador romano.png" alt="Emperador romano" loading="lazy">
+          <figcaption>Emperador romano <span class="visor__contador">1 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a class="actual" href="#d-speculator-1"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-2-der"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-3-der"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-4-der"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-5-der"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-6-der"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-speculator-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#d-speculator-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-speculator-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="d-speculator-2-izq"></span><span class="visor__ancla visor__ancla--der" id="d-speculator-2-der"></span>
+          <img src="campesino speculator.png" alt="Campesino speculator" loading="lazy">
+          <figcaption>Campesino speculator <span class="visor__contador">2 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-speculator-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-speculator-2"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-3-der"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-4-der"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-5-der"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-6-der"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-speculator-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-speculator-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-speculator-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-speculator-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="d-speculator-3-izq"></span><span class="visor__ancla visor__ancla--der" id="d-speculator-3-der"></span>
+          <img src="Fondo senado speculator.png" alt="Fondo senado speculator" loading="lazy">
+          <figcaption>Fondo senado speculator <span class="visor__contador">3 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-speculator-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-speculator-3"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-4-der"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-5-der"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-6-der"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-speculator-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-speculator-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-speculator-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-speculator-4" style="--i: 4">
+          <span class="visor__ancla visor__ancla--izq" id="d-speculator-4-izq"></span><span class="visor__ancla visor__ancla--der" id="d-speculator-4-der"></span>
+          <img src="fondo britania speculator.png" alt="Fondo britania speculator" loading="lazy">
+          <figcaption>Fondo britania speculator <span class="visor__contador">4 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-speculator-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-3-izq"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-speculator-4"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-5-der"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-6-der"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-speculator-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-speculator-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-speculator-5-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-speculator-5" style="--i: 5">
+          <span class="visor__ancla visor__ancla--izq" id="d-speculator-5-izq"></span><span class="visor__ancla visor__ancla--der" id="d-speculator-5-der"></span>
+          <img src="fondo ostia speculator.png" alt="Fondo ostia speculator" loading="lazy">
+          <figcaption>Fondo ostia speculator <span class="visor__contador">5 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-speculator-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-3-izq"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-4-izq"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-speculator-5"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-6-der"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-speculator-5" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-speculator-4-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-speculator-6-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-speculator-6" style="--i: 6">
+          <span class="visor__ancla visor__ancla--izq" id="d-speculator-6-izq"></span><span class="visor__ancla visor__ancla--der" id="d-speculator-6-der"></span>
+          <img src="speculator personaje.png" alt="Speculator personaje" loading="lazy">
+          <figcaption>Speculator personaje <span class="visor__contador">6 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-speculator-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-3-izq"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-4-izq"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a href="#d-speculator-5-izq"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-speculator-6"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-speculator-6" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-speculator-5-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+        </figure>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#d-speculator" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== DESTACADO: MAHOU X LALIGA (copia que vuelve a Destacados; si cambias el texto, cámbialo también en su categoría) ===== -->
+    <section class="galeria proyecto" id="d-mahou">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Mahou x LaLiga</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#destacados" aria-label="Volver a Destacados">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Proyecto de marketing para unir Mahou y LaLiga.</p>
+
+      <div class="proyecto__bloque">
+        <div class="galeria__item galeria__item--video placeholder"><video src="Mahou.mp4" controls preload="metadata"></video></div>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>Dentro del proyecto de marketing, yo estaba encargado de hacer un vídeo a modo de mock-up. Tuvimos que diseñar el fondo de temática de Mahou, hacer un anuncio con vídeos originales (sin que fueran de stock), y además de montar el anuncio, hacer la transición del partido al anuncio. La idea era que el vídeo se reproduciría en el descanso del partido, ya que Mahou patrocinaría LaLiga. Como el copy de la campaña era "No basta un estadio para contenernos", quisimos plasmar cómo tanto el fútbol y Mahou cobraban vida fuera del estadio de fútbol, en casa, en bares y demás sitios de encuentro.</p>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#d-mahou" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== DESTACADO: PINCHO (copia que vuelve a Destacados; si cambias el texto, cámbialo también en su categoría) ===== -->
+    <section class="galeria proyecto" id="d-pincho">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">PINCHO</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#destacados" aria-label="Volver a Destacados">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Diseños de estilo pegatina con un tono urbano.</p>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>El objetivo del proyecto era crear una serie de ilustraciones que podrían ser pegatinas. Quería que tuviera un tono urbano, callejero. Inventé al personaje Pincho, y lo puse en situaciones que se ajustasen a la temática. Quería que fuera un personaje rebelde, y un poco sucio. Por eso le puse ese efecto de ruido blanco en algunas partes de las ilustraciones. Elegí el nombre "Pincho" porque los pinchos son un elemento estético de la cultura punky, que representa muy bien la personalidad que quería que tuviera el proyecto y era un nombre fácil y pegadizo para poder hacer un diseño tipográfico.</p>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Imágenes</h2>
+        <div class="proyecto__imagenes">
+        <a class="placeholder" id="mini-d-pincho-1" href="#d-pincho-1"><img src="PINCHO logo fondo rojo.png" alt="PINCHO logo fondo rojo" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-pincho-2" href="#d-pincho-2"><img src="PINCHO fumón.png" alt="PINCHO fumón" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-pincho-3" href="#d-pincho-3"><img src="PINCHO borrachín.png" alt="PINCHO borrachín" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-pincho-4" href="#d-pincho-4"><img src="PINCHO meón.png" alt="PINCHO meón" loading="lazy"></a>
+        </div>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="d-pincho-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="d-pincho-1-izq"></span><span class="visor__ancla visor__ancla--der" id="d-pincho-1-der"></span>
+          <img src="PINCHO logo fondo rojo.png" alt="PINCHO logo fondo rojo" loading="lazy">
+          <figcaption>PINCHO logo fondo rojo <span class="visor__contador">1 / 4</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a class="actual" href="#d-pincho-1"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#d-pincho-2-der"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#d-pincho-3-der"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#d-pincho-4-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-pincho-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#d-pincho-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-pincho-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="d-pincho-2-izq"></span><span class="visor__ancla visor__ancla--der" id="d-pincho-2-der"></span>
+          <img src="PINCHO fumón.png" alt="PINCHO fumón" loading="lazy">
+          <figcaption>PINCHO fumón <span class="visor__contador">2 / 4</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-pincho-1-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-pincho-2"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#d-pincho-3-der"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#d-pincho-4-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-pincho-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-pincho-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-pincho-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-pincho-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="d-pincho-3-izq"></span><span class="visor__ancla visor__ancla--der" id="d-pincho-3-der"></span>
+          <img src="PINCHO borrachín.png" alt="PINCHO borrachín" loading="lazy">
+          <figcaption>PINCHO borrachín <span class="visor__contador">3 / 4</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-pincho-1-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#d-pincho-2-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-pincho-3"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a href="#d-pincho-4-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-pincho-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-pincho-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-pincho-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-pincho-4" style="--i: 4">
+          <span class="visor__ancla visor__ancla--izq" id="d-pincho-4-izq"></span><span class="visor__ancla visor__ancla--der" id="d-pincho-4-der"></span>
+          <img src="PINCHO meón.png" alt="PINCHO meón" loading="lazy">
+          <figcaption>PINCHO meón <span class="visor__contador">4 / 4</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-pincho-1-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
+            <a href="#d-pincho-2-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
+            <a href="#d-pincho-3-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-pincho-4"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-pincho-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-pincho-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+        </figure>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#d-pincho" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+</body>
+</html>
