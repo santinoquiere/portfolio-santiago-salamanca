@@ -55,7 +55,13 @@ html {
   scroll-padding-top: var(--alto-header);
 }
 
+/* En móvil la página no se puede arrastrar hacia los lados */
+html {
+  overflow-x: hidden;
+}
+
 body {
+  overflow-x: clip;
   background: var(--negro);
   color: var(--blanco);
   font-family: var(--fuente);
@@ -215,38 +221,79 @@ img.placeholder {
 }
 
 /* Cuando el menú está abierto, las tres rayas forman una X */
-body:has(.menu:popover-open) .hamburguesa line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-body:has(.menu:popover-open) .hamburguesa line:nth-child(2) { opacity: 0; }
-body:has(.menu:popover-open) .hamburguesa line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+body:has(.menu-estado:popover-open) .hamburguesa line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+body:has(.menu-estado:popover-open) .hamburguesa line:nth-child(2) { opacity: 0; }
+body:has(.menu-estado:popover-open) .hamburguesa line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-/* Desplegable (el navegador lo muestra u oculta al pulsar la hamburguesa) */
-.menu {
+/* "menu-abierto" no se ve: solo guarda si el menú está abierto o cerrado */
+.menu-estado {
   position: fixed;
-  inset: auto;
-  top: calc(var(--alto-header) - 4px);
-  right: var(--margen);
+  width: 0;
+  height: 0;
   margin: 0;
-  flex-direction: column;
-  gap: 8px;
-  padding: 10px;
-  background: var(--negro);
-  color: var(--blanco);
-  border: 1px solid rgba(245, 248, 225, 0.15);
-  border-radius: var(--radio);
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: none;
+  pointer-events: none;
 }
 
-.menu:popover-open {
+/* Menú en móvil: a pantalla completa, con el fondo difuminado,
+   el logo arriba y los botones grandes en el centro */
+.menu {
   display: flex;
-  animation: aparecer var(--transicion);
+  visibility: hidden;      /* cerrado: no se ve ni se puede pulsar */
+  opacity: 0;
+  /* al cerrarse tarda un momento en desaparecer, para que el toque
+     llegue al botón del menú y no a lo que hay debajo */
+  transition: opacity var(--transicion), visibility 0s var(--transicion);
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: var(--margen);
+  background: rgba(21, 19, 19, 0.6);    /* el negro, un poco transparente */
+  -webkit-backdrop-filter: blur(14px);  /* difumina lo que hay detrás (iPhone) */
+  backdrop-filter: blur(14px);          /* difumina lo que hay detrás */
+  color: var(--blanco);
 }
 
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: translateY(0); }
+body:has(.menu-estado:popover-open) .menu {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity var(--transicion);
 }
 
+/* La hamburguesa (que se convierte en X) queda por encima del menú para cerrarlo */
+.hamburguesa {
+  position: relative;
+  z-index: 2;
+}
+
+.menu__logo {
+  width: 120px;            /* tamaño del logo: súbelo para hacerlo más grande */
+  height: auto;
+  margin-bottom: 16px;
+}
+
+/* En móvil los botones del menú son solo texto, sin recuadro */
 .menu .boton {
-  min-width: 150px;
+  width: min(80vw, 320px);
+  padding: 0.4em 0;
+  border: 0;
+  background: none;
+  font-size: 1.8rem;       /* tamaño del texto del menú */
+}
+
+/* Al pulsar la palabra cambia de color (y te lleva al apartado) */
+.menu .boton:hover,
+.menu .boton:focus-visible,
+.menu .boton:active {
+  background: none;
+  color: var(--blanco);
 }
 
 /* =========================================================
@@ -769,11 +816,29 @@ body:has(.galeria:target, .galeria :target) .principal {
     border: 0;
     background: none;
     overflow: visible;
-    animation: none;
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .menu__logo {
+    display: none;
   }
 
   .menu .boton {
-    min-width: 0;
+    width: auto;
+    padding: 0.6em 1.6em;
+    border: 1.5px solid var(--verde);
+    background: var(--negro);
+    font-size: 0.8rem;
+  }
+
+  .menu .boton:hover,
+  .menu .boton:focus-visible {
+    background: var(--verde);
+    color: var(--negro);
   }
 }
 /* =========================================================
@@ -937,6 +1002,27 @@ a.carta:focus-visible h3 {
 .proyecto__imagenes > a {
   aspect-ratio: 1;
   overflow: hidden;
+}
+
+/* Imágenes horizontales (p. ej. las páginas de la presentación de Mahou):
+   miniaturas apaisadas para que se vean enteras */
+.proyecto__imagenes--horizontal {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+}
+
+.proyecto__imagenes--horizontal > a {
+  aspect-ratio: var(--proporcion, 16 / 9);   /* forma de la miniatura (por defecto 16:9) */
+}
+
+/* Pantallas de móvil (p. ej. la previsualización de FOODCARE):
+   miniaturas altas con las esquinas redondeadas, como un teléfono */
+.proyecto__imagenes--movil {
+  grid-template-columns: repeat(auto-fill, minmax(min(45%, 200px), 1fr));
+}
+
+.proyecto__imagenes--movil > a {
+  aspect-ratio: 390 / 844;
+  border-radius: 18px;
 }
 
 /* ---------- VISOR DE FOTOS (galería y páginas de proyecto) ----------

@@ -17,9 +17,11 @@
     </a>
 
     <!-- Menú hamburguesa sin JavaScript, con el atributo "popover" de HTML:
-         el botón abre y cierra el menú (popovertarget) y al pulsar fuera se cierra solo. -->
+         el botón abre y cierra "menu-abierto" (popovertarget), que solo guarda si el menú
+         está abierto; el CSS enseña entonces el menú a pantalla completa.
+         Al pulsar un botón del menú o fuera de los botones, se cierra solo. -->
     <nav class="nav">
-      <button class="hamburguesa" popovertarget="menu" aria-label="Abrir menú">
+      <button class="hamburguesa" popovertarget="menu-abierto" aria-label="Abrir menú">
         <!-- las tres líneas se dibujan en SVG para que tengan exactamente el mismo grosor -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <line x1="4" y1="6" x2="20" y2="6"/>
@@ -27,7 +29,9 @@
           <line x1="4" y1="18" x2="20" y2="18"/>
         </svg>
       </button>
-      <div class="menu" id="menu" popover>
+      <div class="menu-estado" id="menu-abierto" popover></div>
+      <div class="menu" id="menu">
+        <img class="menu__logo" src="LOGO DUENDE ppal.png" alt="">
         <a class="boton" href="#sobre-mi">Sobre mí</a>
         <a class="boton" href="#proyectos">Proyectos</a>
         <a class="boton" href="#contacto">Contacto</a>
@@ -169,13 +173,6 @@
       </div>
 
       <div class="cartas">
-        <a class="carta" href="#d-male-winx">
-          <div class="carta__imagen placeholder"><img src="male winx_Magic winx.png" alt=""></div>
-          <div class="carta__texto">
-            <h3>Creación de personaje de Winx Club</h3>
-            <p>Proyecto para crear un personaje de Winx Club con sus transformaciones.</p>
-          </div>
-        </a>
         <a class="carta" href="#d-speculator">
           <div class="carta__imagen placeholder"><img src="speculator.jpg" alt=""></div>
           <div class="carta__texto">
@@ -190,11 +187,11 @@
             <p>Proyecto de marketing para unir Mahou y LaLiga.</p>
           </div>
         </a>
-        <a class="carta" href="#d-pincho">
-          <div class="carta__imagen placeholder"><img src="PINCHO logo fondo rojo.png" alt=""></div>
+        <a class="carta" href="#d-foodcare">
+          <div class="carta__imagen placeholder"><img src="FOODCARE.png" alt=""></div>
           <div class="carta__texto">
-            <h3>PINCHO</h3>
-            <p>Diseños de estilo pegatina con un tono urbano.</p>
+            <h3>FOODCARE</h3>
+            <p>Desarrollo de aplicación de tipo tracker para Android.</p>
           </div>
         </a>
       </div>
@@ -334,6 +331,27 @@
           <div class="carta__texto">
             <h3>Animación de caminata</h3>
             <p>Animación de un personaje caminando.</p>
+          </div>
+        </a>
+        <a class="carta" href="#p-ui">
+          <div class="carta__imagen placeholder"><img src="Inicio.png" alt=""></div>
+          <div class="carta__texto">
+            <h3>Creación de UI</h3>
+            <p>Creación de una interfaz a partir del libro "Carl el mazmorrero"</p>
+          </div>
+        </a>
+        <a class="carta" href="#p-speculator">
+          <div class="carta__imagen placeholder"><img src="speculator.jpg" alt=""></div>
+          <div class="carta__texto">
+            <h3>Speculator</h3>
+            <p>Proyecto de videojuego basado en el antiguo Imperio Romano.</p>
+          </div>
+        </a>
+        <a class="carta" href="#p-foodcare">
+          <div class="carta__imagen placeholder"><img src="FOODCARE.png" alt=""></div>
+          <div class="carta__texto">
+            <h3>FOODCARE</h3>
+            <p>Desarrollo de aplicación de tipo tracker para Android.</p>
           </div>
         </a>
       </div>
@@ -1766,6 +1784,540 @@
         <p>Dentro del proyecto de marketing, yo estaba encargado de hacer un vídeo a modo de mock-up. Tuvimos que diseñar el fondo de temática de Mahou, hacer un anuncio con vídeos originales (sin que fueran de stock), y además de montar el anuncio, hacer la transición del partido al anuncio. La idea era que el vídeo se reproduciría en el descanso del partido, ya que Mahou patrocinaría LaLiga. Como el copy de la campaña era "No basta un estadio para contenernos", quisimos plasmar cómo tanto el fútbol y Mahou cobraban vida fuera del estadio de fútbol, en casa, en bares y demás sitios de encuentro.</p>
       </div>
 
+      <div class="proyecto__bloque">
+        <h2>Identidad visual</h2>
+        <div class="proyecto__imagenes proyecto__imagenes--horizontal">
+        <a class="placeholder" id="mini-mahou-1" href="#mahou-1"><img src="mahou identidad 1.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-2" href="#mahou-2"><img src="mahou identidad 2.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-3" href="#mahou-3"><img src="mahou identidad 3.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-4" href="#mahou-4"><img src="mahou identidad 4.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-5" href="#mahou-5"><img src="mahou identidad 5.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-6" href="#mahou-6"><img src="mahou identidad 6.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-7" href="#mahou-7"><img src="mahou identidad 7.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-8" href="#mahou-8"><img src="mahou identidad 8.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-9" href="#mahou-9"><img src="mahou identidad 9.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-10" href="#mahou-10"><img src="mahou identidad 10.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-11" href="#mahou-11"><img src="mahou identidad 11.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-12" href="#mahou-12"><img src="mahou identidad 12.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-13" href="#mahou-13"><img src="mahou identidad 13.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-14" href="#mahou-14"><img src="mahou identidad 14.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-15" href="#mahou-15"><img src="mahou identidad 15.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-16" href="#mahou-16"><img src="mahou identidad 16.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-17" href="#mahou-17"><img src="mahou identidad 17.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-mahou-18" href="#mahou-18"><img src="mahou identidad 18.jpg" alt="Identidad visual" loading="lazy"></a>
+        </div>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="mahou-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-1-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-1-der"></span>
+          <img src="mahou identidad 1.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">1 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a class="actual" href="#mahou-1"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-der"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-der"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-der"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-der"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-der"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-2-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-2-der"></span>
+          <img src="mahou identidad 2.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">2 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-2"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-der"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-der"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-der"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-der"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-3-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-3-der"></span>
+          <img src="mahou identidad 3.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">3 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-3"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-der"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-der"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-der"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-4" style="--i: 4">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-4-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-4-der"></span>
+          <img src="mahou identidad 4.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">4 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-4"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-der"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-der"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-5-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-5" style="--i: 5">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-5-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-5-der"></span>
+          <img src="mahou identidad 5.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">5 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-5"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-der"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-5" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-4-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-6-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-6" style="--i: 6">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-6-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-6-der"></span>
+          <img src="mahou identidad 6.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">6 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-6"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-6" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-5-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-7-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-7" style="--i: 7">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-7-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-7-der"></span>
+          <img src="mahou identidad 7.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">7 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-7"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-7" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-6-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-8-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-8" style="--i: 8">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-8-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-8-der"></span>
+          <img src="mahou identidad 8.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">8 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-8"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-8" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-7-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-9-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-9" style="--i: 9">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-9-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-9-der"></span>
+          <img src="mahou identidad 9.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">9 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-9"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-9" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-8-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-10-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-10" style="--i: 10">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-10-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-10-der"></span>
+          <img src="mahou identidad 10.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">10 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-10"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-10" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-9-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-11-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-11" style="--i: 11">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-11-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-11-der"></span>
+          <img src="mahou identidad 11.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">11 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-11"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-11" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-10-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-12-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-12" style="--i: 12">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-12-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-12-der"></span>
+          <img src="mahou identidad 12.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">12 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-12"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-12" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-11-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-13-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-13" style="--i: 13">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-13-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-13-der"></span>
+          <img src="mahou identidad 13.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">13 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-13"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-13" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-12-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-14-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-14" style="--i: 14">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-14-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-14-der"></span>
+          <img src="mahou identidad 14.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">14 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-izq"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-14"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-14" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-13-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-15-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-15" style="--i: 15">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-15-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-15-der"></span>
+          <img src="mahou identidad 15.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">15 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-izq"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-izq"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-15"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-15" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-14-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-16-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-16" style="--i: 16">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-16-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-16-der"></span>
+          <img src="mahou identidad 16.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">16 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-izq"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-izq"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-izq"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-16"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-16" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-15-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-17-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-17" style="--i: 17">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-17-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-17-der"></span>
+          <img src="mahou identidad 17.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">17 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-izq"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-izq"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-izq"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-izq"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-17"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-17" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-16-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#mahou-18-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="mahou-18" style="--i: 18">
+          <span class="visor__ancla visor__ancla--izq" id="mahou-18-izq"></span><span class="visor__ancla visor__ancla--der" id="mahou-18-der"></span>
+          <img src="mahou identidad 18.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">18 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-13-izq"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-14-izq"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-15-izq"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-16-izq"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#mahou-17-izq"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#mahou-18"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-mahou-18" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#mahou-17-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+        </figure>
+      </div>
+
       <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
       <a class="flecha flecha--arriba" href="#p-mahou" aria-label="Volver arriba">
         <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
@@ -1817,33 +2369,30 @@
       </a>
     </section>
 
-    <!-- ===== DESTACADO: WINX CLUB (copia que vuelve a Destacados; si cambias el texto, cámbialo también en su categoría) ===== -->
-    <section class="galeria proyecto" id="d-male-winx">
+    <!-- ===== PROYECTO: CREACIÓN DE UI ===== -->
+    <section class="galeria proyecto" id="p-ui">
       <div class="galeria__cabecera">
-        <h1 class="titulo">Creación de personaje de Winx Club</h1>
+        <h1 class="titulo">Creación de UI</h1>
 
         <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
-        <a class="flecha" href="#destacados" aria-label="Volver a Destacados">
+        <a class="flecha" href="#otros" aria-label="Volver a Otros proyectos">
           <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
         </a>
       </div>
 
-      <p class="proyecto__frase">Proyecto para crear un personaje de Winx Club con sus transformaciones.</p>
+      <p class="proyecto__frase">Creación de una interfaz a partir del libro "Carl el mazmorrero"</p>
 
       <div class="proyecto__bloque">
         <h2>Desarrollo creativo</h2>
-        <p>El objetivo era crear un personaje de la serie infantil animada Winx Club. Entre los requisitos estaban que el personaje vistiese al estilo Y2K, y que utilizase tonos tierra. Creé el personaje con ropa de calle y la transformación primaria (magic winx). Derivada de esta, hice la transformación Enchantix. Para Believix y Sirenix, me permití experimentar más con los colores y la moda, sin dejar de perder la esencia del personaje. Finalmente, hice la pixie (las pixies son hadas que acompañan a las protagonistas) que acompañaría al personaje. Fue muy interesante investigar la moda Y2K y la serie de Winx Club, puesto que no tenía mucho conocimiento de ninguno de estos ámbitos.</p>
+        <p>El objetivo era crear una interfaz a partir de cómo se describe la UI que ven los personajes del libro "Carl el Mazmorrero". Después de leerlo, hubo que tomar una serie de decisiones estéticas basándonos en las expectativas de jugadores de videojuegos. Prototipamos la UI en Figma y desarrollamos la interactividad de la misma.</p>
       </div>
 
       <div class="proyecto__bloque">
         <h2>Imágenes</h2>
-        <div class="proyecto__imagenes">
-        <a class="placeholder" id="mini-d-male-winx-1" href="#d-male-winx-1"><img src="male winx_Ropa de calle.png" alt="Male winx_Ropa de calle" loading="lazy"></a>
-        <a class="placeholder" id="mini-d-male-winx-2" href="#d-male-winx-2"><img src="male winx_Magic winx.png" alt="Male winx_Magic winx" loading="lazy"></a>
-        <a class="placeholder" id="mini-d-male-winx-3" href="#d-male-winx-3"><img src="male winx_Enchantix.png" alt="Male winx_Enchantix" loading="lazy"></a>
-        <a class="placeholder" id="mini-d-male-winx-4" href="#d-male-winx-4"><img src="male winx_Believix.png" alt="Male winx_Believix" loading="lazy"></a>
-        <a class="placeholder" id="mini-d-male-winx-5" href="#d-male-winx-5"><img src="male winx_Sirenix final.png" alt="Male winx_Sirenix final" loading="lazy"></a>
-        <a class="placeholder" id="mini-d-male-winx-6" href="#d-male-winx-6"><img src="male winx_Pixie.png" alt="Male winx_Pixie" loading="lazy"></a>
+        <div class="proyecto__imagenes proyecto__imagenes--horizontal" style="--proporcion: 1600 / 1040">
+        <a class="placeholder" id="mini-ui-1" href="#ui-1"><img src="Inicio.png" alt="Inicio" loading="lazy"></a>
+        <a class="placeholder" id="mini-ui-2" href="#ui-2"><img src="Inventario Grande.png" alt="Inventario Grande" loading="lazy"></a>
+        <a class="placeholder" id="mini-ui-3" href="#ui-3"><img src="Mapa Grande.png" alt="Mapa Grande" loading="lazy"></a>
         </div>
       </div>
 
@@ -1853,109 +2402,378 @@
            Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
            (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
       <div class="visor">
-        <figure class="visor__foto" id="d-male-winx-1" style="--i: 1">
-          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-1-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-1-der"></span>
-          <img src="male winx_Ropa de calle.png" alt="Male winx_Ropa de calle" loading="lazy">
-          <figcaption>Male winx_Ropa de calle <span class="visor__contador">1 / 6</span></figcaption>
+        <figure class="visor__foto" id="ui-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="ui-1-izq"></span><span class="visor__ancla visor__ancla--der" id="ui-1-der"></span>
+          <img src="Inicio.png" alt="Inicio" loading="lazy">
+          <figcaption>Inicio <span class="visor__contador">1 / 3</span></figcaption>
           <nav class="visor__tira" aria-label="Todas las fotos">
-            <a class="actual" href="#d-male-winx-1"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-2-der"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-3-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-4-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#ui-1"><img src="Inicio.png" alt="" loading="lazy"></a>
+            <a href="#ui-2-der"><img src="Inventario Grande.png" alt="" loading="lazy"></a>
+            <a href="#ui-3-der"><img src="Mapa Grande.png" alt="" loading="lazy"></a>
           </nav>
-          <a class="flecha visor__cerrar" href="#mini-d-male-winx-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
-          <a class="flecha visor__sig" href="#d-male-winx-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+          <a class="flecha visor__cerrar" href="#mini-ui-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#ui-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
         </figure>
-        <figure class="visor__foto" id="d-male-winx-2" style="--i: 2">
-          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-2-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-2-der"></span>
-          <img src="male winx_Magic winx.png" alt="Male winx_Magic winx" loading="lazy">
-          <figcaption>Male winx_Magic winx <span class="visor__contador">2 / 6</span></figcaption>
+        <figure class="visor__foto" id="ui-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="ui-2-izq"></span><span class="visor__ancla visor__ancla--der" id="ui-2-der"></span>
+          <img src="Inventario Grande.png" alt="Inventario Grande" loading="lazy">
+          <figcaption>Inventario Grande <span class="visor__contador">2 / 3</span></figcaption>
           <nav class="visor__tira" aria-label="Todas las fotos">
-            <a href="#d-male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
-            <a class="actual" href="#d-male-winx-2"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-3-der"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-4-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#ui-1-izq"><img src="Inicio.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#ui-2"><img src="Inventario Grande.png" alt="" loading="lazy"></a>
+            <a href="#ui-3-der"><img src="Mapa Grande.png" alt="" loading="lazy"></a>
           </nav>
-          <a class="flecha visor__cerrar" href="#mini-d-male-winx-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
-          <a class="flecha visor__ant" href="#d-male-winx-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
-          <a class="flecha visor__sig" href="#d-male-winx-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+          <a class="flecha visor__cerrar" href="#mini-ui-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#ui-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#ui-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
         </figure>
-        <figure class="visor__foto" id="d-male-winx-3" style="--i: 3">
-          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-3-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-3-der"></span>
-          <img src="male winx_Enchantix.png" alt="Male winx_Enchantix" loading="lazy">
-          <figcaption>Male winx_Enchantix <span class="visor__contador">3 / 6</span></figcaption>
+        <figure class="visor__foto" id="ui-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="ui-3-izq"></span><span class="visor__ancla visor__ancla--der" id="ui-3-der"></span>
+          <img src="Mapa Grande.png" alt="Mapa Grande" loading="lazy">
+          <figcaption>Mapa Grande <span class="visor__contador">3 / 3</span></figcaption>
           <nav class="visor__tira" aria-label="Todas las fotos">
-            <a href="#d-male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
-            <a class="actual" href="#d-male-winx-3"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-4-der"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
+            <a href="#ui-1-izq"><img src="Inicio.png" alt="" loading="lazy"></a>
+            <a href="#ui-2-izq"><img src="Inventario Grande.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#ui-3"><img src="Mapa Grande.png" alt="" loading="lazy"></a>
           </nav>
-          <a class="flecha visor__cerrar" href="#mini-d-male-winx-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
-          <a class="flecha visor__ant" href="#d-male-winx-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
-          <a class="flecha visor__sig" href="#d-male-winx-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
-        </figure>
-        <figure class="visor__foto" id="d-male-winx-4" style="--i: 4">
-          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-4-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-4-der"></span>
-          <img src="male winx_Believix.png" alt="Male winx_Believix" loading="lazy">
-          <figcaption>Male winx_Believix <span class="visor__contador">4 / 6</span></figcaption>
-          <nav class="visor__tira" aria-label="Todas las fotos">
-            <a href="#d-male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-3-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
-            <a class="actual" href="#d-male-winx-4"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-5-der"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
-          </nav>
-          <a class="flecha visor__cerrar" href="#mini-d-male-winx-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
-          <a class="flecha visor__ant" href="#d-male-winx-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
-          <a class="flecha visor__sig" href="#d-male-winx-5-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
-        </figure>
-        <figure class="visor__foto" id="d-male-winx-5" style="--i: 5">
-          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-5-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-5-der"></span>
-          <img src="male winx_Sirenix final.png" alt="Male winx_Sirenix final" loading="lazy">
-          <figcaption>Male winx_Sirenix final <span class="visor__contador">5 / 6</span></figcaption>
-          <nav class="visor__tira" aria-label="Todas las fotos">
-            <a href="#d-male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-3-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-4-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
-            <a class="actual" href="#d-male-winx-5"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-6-der"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
-          </nav>
-          <a class="flecha visor__cerrar" href="#mini-d-male-winx-5" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
-          <a class="flecha visor__ant" href="#d-male-winx-4-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
-          <a class="flecha visor__sig" href="#d-male-winx-6-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
-        </figure>
-        <figure class="visor__foto" id="d-male-winx-6" style="--i: 6">
-          <span class="visor__ancla visor__ancla--izq" id="d-male-winx-6-izq"></span><span class="visor__ancla visor__ancla--der" id="d-male-winx-6-der"></span>
-          <img src="male winx_Pixie.png" alt="Male winx_Pixie" loading="lazy">
-          <figcaption>Male winx_Pixie <span class="visor__contador">6 / 6</span></figcaption>
-          <nav class="visor__tira" aria-label="Todas las fotos">
-            <a href="#d-male-winx-1-izq"><img src="male winx_Ropa de calle.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-2-izq"><img src="male winx_Magic winx.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-3-izq"><img src="male winx_Enchantix.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-4-izq"><img src="male winx_Believix.png" alt="" loading="lazy"></a>
-            <a href="#d-male-winx-5-izq"><img src="male winx_Sirenix final.png" alt="" loading="lazy"></a>
-            <a class="actual" href="#d-male-winx-6"><img src="male winx_Pixie.png" alt="" loading="lazy"></a>
-          </nav>
-          <a class="flecha visor__cerrar" href="#mini-d-male-winx-6" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
-          <a class="flecha visor__ant" href="#d-male-winx-5-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__cerrar" href="#mini-ui-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#ui-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
         </figure>
       </div>
 
       <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
-      <a class="flecha flecha--arriba" href="#d-male-winx" aria-label="Volver arriba">
+      <a class="flecha flecha--arriba" href="#p-ui" aria-label="Volver arriba">
         <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
       </a>
     </section>
 
-    <!-- ===== DESTACADO: SPECULATOR ===== -->
+    <!-- ===== PROYECTO: SPECULATOR ===== -->
+    <section class="galeria proyecto" id="p-speculator">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">Speculator</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#otros" aria-label="Volver a Otros proyectos">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Proyecto de videojuego basado en el antiguo Imperio Romano.</p>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>El objetivo era hacer un videojuego de toma de decisiones (parecido al Reign en cuanto a gameplay) ambientado en el antiguo Imperio Romano que girara en torno a la figura del speculator (un tipo de soldado de inteligencia). Estuve encargado de la dirección de arte, y desarrollé bastantes ilustraciones (personajes, fondos, iconos...).</p>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Imágenes</h2>
+        <div class="proyecto__imagenes">
+        <a class="placeholder" id="mini-speculator-1" href="#speculator-1"><img src="emperador romano.png" alt="Emperador romano" loading="lazy"></a>
+        <a class="placeholder" id="mini-speculator-2" href="#speculator-2"><img src="campesino speculator.png" alt="Campesino speculator" loading="lazy"></a>
+        <a class="placeholder" id="mini-speculator-3" href="#speculator-3"><img src="Fondo senado speculator.png" alt="Fondo senado speculator" loading="lazy"></a>
+        <a class="placeholder" id="mini-speculator-4" href="#speculator-4"><img src="fondo britania speculator.png" alt="Fondo britania speculator" loading="lazy"></a>
+        <a class="placeholder" id="mini-speculator-5" href="#speculator-5"><img src="fondo ostia speculator.png" alt="Fondo ostia speculator" loading="lazy"></a>
+        <a class="placeholder" id="mini-speculator-6" href="#speculator-6"><img src="speculator personaje.png" alt="Speculator personaje" loading="lazy"></a>
+        </div>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="speculator-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="speculator-1-izq"></span><span class="visor__ancla visor__ancla--der" id="speculator-1-der"></span>
+          <img src="emperador romano.png" alt="Emperador romano" loading="lazy">
+          <figcaption>Emperador romano <span class="visor__contador">1 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a class="actual" href="#speculator-1"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#speculator-2-der"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-3-der"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-4-der"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-5-der"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-6-der"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-speculator-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#speculator-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="speculator-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="speculator-2-izq"></span><span class="visor__ancla visor__ancla--der" id="speculator-2-der"></span>
+          <img src="campesino speculator.png" alt="Campesino speculator" loading="lazy">
+          <figcaption>Campesino speculator <span class="visor__contador">2 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#speculator-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#speculator-2"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-3-der"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-4-der"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-5-der"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-6-der"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-speculator-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#speculator-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#speculator-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="speculator-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="speculator-3-izq"></span><span class="visor__ancla visor__ancla--der" id="speculator-3-der"></span>
+          <img src="Fondo senado speculator.png" alt="Fondo senado speculator" loading="lazy">
+          <figcaption>Fondo senado speculator <span class="visor__contador">3 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#speculator-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#speculator-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#speculator-3"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-4-der"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-5-der"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-6-der"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-speculator-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#speculator-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#speculator-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="speculator-4" style="--i: 4">
+          <span class="visor__ancla visor__ancla--izq" id="speculator-4-izq"></span><span class="visor__ancla visor__ancla--der" id="speculator-4-der"></span>
+          <img src="fondo britania speculator.png" alt="Fondo britania speculator" loading="lazy">
+          <figcaption>Fondo britania speculator <span class="visor__contador">4 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#speculator-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#speculator-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-3-izq"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#speculator-4"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-5-der"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-6-der"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-speculator-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#speculator-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#speculator-5-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="speculator-5" style="--i: 5">
+          <span class="visor__ancla visor__ancla--izq" id="speculator-5-izq"></span><span class="visor__ancla visor__ancla--der" id="speculator-5-der"></span>
+          <img src="fondo ostia speculator.png" alt="Fondo ostia speculator" loading="lazy">
+          <figcaption>Fondo ostia speculator <span class="visor__contador">5 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#speculator-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#speculator-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-3-izq"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-4-izq"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#speculator-5"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-6-der"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-speculator-5" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#speculator-4-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#speculator-6-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="speculator-6" style="--i: 6">
+          <span class="visor__ancla visor__ancla--izq" id="speculator-6-izq"></span><span class="visor__ancla visor__ancla--der" id="speculator-6-der"></span>
+          <img src="speculator personaje.png" alt="Speculator personaje" loading="lazy">
+          <figcaption>Speculator personaje <span class="visor__contador">6 / 6</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#speculator-1-izq"><img src="emperador romano.png" alt="" loading="lazy"></a>
+            <a href="#speculator-2-izq"><img src="campesino speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-3-izq"><img src="Fondo senado speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-4-izq"><img src="fondo britania speculator.png" alt="" loading="lazy"></a>
+            <a href="#speculator-5-izq"><img src="fondo ostia speculator.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#speculator-6"><img src="speculator personaje.png" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-speculator-6" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#speculator-5-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+        </figure>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#p-speculator" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== PROYECTO: FOODCARE ===== -->
+    <section class="galeria proyecto" id="p-foodcare">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">FOODCARE</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#otros" aria-label="Volver a Otros proyectos">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Desarrollo de aplicación de tipo tracker para Android.</p>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>El objetivo era desarrollar completamente una app de tipo tracker. Elegimos llevar a cabo una aplicación en la que se podían crear y descubrir recetas, a la vez que llevar un registro de la dieta que uno lleva. Elegimos enfocarlo a un tono healthy, llamándolo FOODCARE y teniendo tonos verdes. Lo prototipamos en Figma y luego lo pasamos a código.</p>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Previsualización de la app</h2>
+        <div class="proyecto__imagenes proyecto__imagenes--movil">
+        <a class="placeholder" id="mini-foodcare-1" href="#foodcare-1"><img src="foodcare pantalla 1.jpg" alt="Bienvenida" loading="lazy"></a>
+        <a class="placeholder" id="mini-foodcare-2" href="#foodcare-2"><img src="foodcare pantalla 2.jpg" alt="Inicio" loading="lazy"></a>
+        <a class="placeholder" id="mini-foodcare-3" href="#foodcare-3"><img src="foodcare pantalla 3.jpg" alt="Receta" loading="lazy"></a>
+        <a class="placeholder" id="mini-foodcare-4" href="#foodcare-4"><img src="foodcare pantalla 4.jpg" alt="Descubrir" loading="lazy"></a>
+        <a class="placeholder" id="mini-foodcare-5" href="#foodcare-5"><img src="foodcare pantalla 5.jpg" alt="Mi diario" loading="lazy"></a>
+        <a class="placeholder" id="mini-foodcare-6" href="#foodcare-6"><img src="foodcare pantalla 6.jpg" alt="Plan semanal" loading="lazy"></a>
+        <a class="placeholder" id="mini-foodcare-7" href="#foodcare-7"><img src="foodcare pantalla 7.jpg" alt="Mi mascota" loading="lazy"></a>
+        <a class="placeholder" id="mini-foodcare-8" href="#foodcare-8"><img src="foodcare pantalla 8.jpg" alt="Perfil" loading="lazy"></a>
+        </div>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="foodcare-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="foodcare-1-izq"></span><span class="visor__ancla visor__ancla--der" id="foodcare-1-der"></span>
+          <img src="foodcare pantalla 1.jpg" alt="Bienvenida" loading="lazy">
+          <figcaption>Bienvenida <span class="visor__contador">1 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a class="actual" href="#foodcare-1"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-2-der"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-3-der"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-4-der"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-5-der"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-6-der"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-foodcare-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#foodcare-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="foodcare-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="foodcare-2-izq"></span><span class="visor__ancla visor__ancla--der" id="foodcare-2-der"></span>
+          <img src="foodcare pantalla 2.jpg" alt="Inicio" loading="lazy">
+          <figcaption>Inicio <span class="visor__contador">2 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#foodcare-2"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-3-der"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-4-der"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-5-der"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-6-der"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-foodcare-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#foodcare-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#foodcare-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="foodcare-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="foodcare-3-izq"></span><span class="visor__ancla visor__ancla--der" id="foodcare-3-der"></span>
+          <img src="foodcare pantalla 3.jpg" alt="Receta" loading="lazy">
+          <figcaption>Receta <span class="visor__contador">3 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#foodcare-3"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-4-der"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-5-der"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-6-der"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-foodcare-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#foodcare-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#foodcare-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="foodcare-4" style="--i: 4">
+          <span class="visor__ancla visor__ancla--izq" id="foodcare-4-izq"></span><span class="visor__ancla visor__ancla--der" id="foodcare-4-der"></span>
+          <img src="foodcare pantalla 4.jpg" alt="Descubrir" loading="lazy">
+          <figcaption>Descubrir <span class="visor__contador">4 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-3-izq"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#foodcare-4"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-5-der"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-6-der"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-foodcare-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#foodcare-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#foodcare-5-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="foodcare-5" style="--i: 5">
+          <span class="visor__ancla visor__ancla--izq" id="foodcare-5-izq"></span><span class="visor__ancla visor__ancla--der" id="foodcare-5-der"></span>
+          <img src="foodcare pantalla 5.jpg" alt="Mi diario" loading="lazy">
+          <figcaption>Mi diario <span class="visor__contador">5 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-3-izq"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-4-izq"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#foodcare-5"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-6-der"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-foodcare-5" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#foodcare-4-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#foodcare-6-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="foodcare-6" style="--i: 6">
+          <span class="visor__ancla visor__ancla--izq" id="foodcare-6-izq"></span><span class="visor__ancla visor__ancla--der" id="foodcare-6-der"></span>
+          <img src="foodcare pantalla 6.jpg" alt="Plan semanal" loading="lazy">
+          <figcaption>Plan semanal <span class="visor__contador">6 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-3-izq"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-4-izq"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-5-izq"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#foodcare-6"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-foodcare-6" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#foodcare-5-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#foodcare-7-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="foodcare-7" style="--i: 7">
+          <span class="visor__ancla visor__ancla--izq" id="foodcare-7-izq"></span><span class="visor__ancla visor__ancla--der" id="foodcare-7-der"></span>
+          <img src="foodcare pantalla 7.jpg" alt="Mi mascota" loading="lazy">
+          <figcaption>Mi mascota <span class="visor__contador">7 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-3-izq"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-4-izq"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-5-izq"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-6-izq"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#foodcare-7"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-foodcare-7" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#foodcare-6-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#foodcare-8-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="foodcare-8" style="--i: 8">
+          <span class="visor__ancla visor__ancla--izq" id="foodcare-8-izq"></span><span class="visor__ancla visor__ancla--der" id="foodcare-8-der"></span>
+          <img src="foodcare pantalla 8.jpg" alt="Perfil" loading="lazy">
+          <figcaption>Perfil <span class="visor__contador">8 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-3-izq"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-4-izq"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-5-izq"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-6-izq"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#foodcare-7-izq"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#foodcare-8"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-foodcare-8" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#foodcare-7-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+        </figure>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#p-foodcare" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== DESTACADO: SPECULATOR (copia que vuelve a Destacados; si cambias el texto, cámbialo también en su categoría) ===== -->
     <section class="galeria proyecto" id="d-speculator">
       <div class="galeria__cabecera">
         <h1 class="titulo">Speculator</h1>
@@ -2115,37 +2933,27 @@
         <p>Dentro del proyecto de marketing, yo estaba encargado de hacer un vídeo a modo de mock-up. Tuvimos que diseñar el fondo de temática de Mahou, hacer un anuncio con vídeos originales (sin que fueran de stock), y además de montar el anuncio, hacer la transición del partido al anuncio. La idea era que el vídeo se reproduciría en el descanso del partido, ya que Mahou patrocinaría LaLiga. Como el copy de la campaña era "No basta un estadio para contenernos", quisimos plasmar cómo tanto el fútbol y Mahou cobraban vida fuera del estadio de fútbol, en casa, en bares y demás sitios de encuentro.</p>
       </div>
 
-      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
-      <a class="flecha flecha--arriba" href="#d-mahou" aria-label="Volver arriba">
-        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
-      </a>
-    </section>
-
-    <!-- ===== DESTACADO: PINCHO (copia que vuelve a Destacados; si cambias el texto, cámbialo también en su categoría) ===== -->
-    <section class="galeria proyecto" id="d-pincho">
-      <div class="galeria__cabecera">
-        <h1 class="titulo">PINCHO</h1>
-
-        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
-        <a class="flecha" href="#destacados" aria-label="Volver a Destacados">
-          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
-        </a>
-      </div>
-
-      <p class="proyecto__frase">Diseños de estilo pegatina con un tono urbano.</p>
-
       <div class="proyecto__bloque">
-        <h2>Desarrollo creativo</h2>
-        <p>El objetivo del proyecto era crear una serie de ilustraciones que podrían ser pegatinas. Quería que tuviera un tono urbano, callejero. Inventé al personaje Pincho, y lo puse en situaciones que se ajustasen a la temática. Quería que fuera un personaje rebelde, y un poco sucio. Por eso le puse ese efecto de ruido blanco en algunas partes de las ilustraciones. Elegí el nombre "Pincho" porque los pinchos son un elemento estético de la cultura punky, que representa muy bien la personalidad que quería que tuviera el proyecto y era un nombre fácil y pegadizo para poder hacer un diseño tipográfico.</p>
-      </div>
-
-      <div class="proyecto__bloque">
-        <h2>Imágenes</h2>
-        <div class="proyecto__imagenes">
-        <a class="placeholder" id="mini-d-pincho-1" href="#d-pincho-1"><img src="PINCHO logo fondo rojo.png" alt="PINCHO logo fondo rojo" loading="lazy"></a>
-        <a class="placeholder" id="mini-d-pincho-2" href="#d-pincho-2"><img src="PINCHO fumón.png" alt="PINCHO fumón" loading="lazy"></a>
-        <a class="placeholder" id="mini-d-pincho-3" href="#d-pincho-3"><img src="PINCHO borrachín.png" alt="PINCHO borrachín" loading="lazy"></a>
-        <a class="placeholder" id="mini-d-pincho-4" href="#d-pincho-4"><img src="PINCHO meón.png" alt="PINCHO meón" loading="lazy"></a>
+        <h2>Identidad visual</h2>
+        <div class="proyecto__imagenes proyecto__imagenes--horizontal">
+        <a class="placeholder" id="mini-d-mahou-1" href="#d-mahou-1"><img src="mahou identidad 1.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-2" href="#d-mahou-2"><img src="mahou identidad 2.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-3" href="#d-mahou-3"><img src="mahou identidad 3.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-4" href="#d-mahou-4"><img src="mahou identidad 4.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-5" href="#d-mahou-5"><img src="mahou identidad 5.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-6" href="#d-mahou-6"><img src="mahou identidad 6.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-7" href="#d-mahou-7"><img src="mahou identidad 7.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-8" href="#d-mahou-8"><img src="mahou identidad 8.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-9" href="#d-mahou-9"><img src="mahou identidad 9.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-10" href="#d-mahou-10"><img src="mahou identidad 10.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-11" href="#d-mahou-11"><img src="mahou identidad 11.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-12" href="#d-mahou-12"><img src="mahou identidad 12.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-13" href="#d-mahou-13"><img src="mahou identidad 13.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-14" href="#d-mahou-14"><img src="mahou identidad 14.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-15" href="#d-mahou-15"><img src="mahou identidad 15.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-16" href="#d-mahou-16"><img src="mahou identidad 16.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-17" href="#d-mahou-17"><img src="mahou identidad 17.jpg" alt="Identidad visual" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-mahou-18" href="#d-mahou-18"><img src="mahou identidad 18.jpg" alt="Identidad visual" loading="lazy"></a>
         </div>
       </div>
 
@@ -2155,64 +2963,700 @@
            Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
            (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
       <div class="visor">
-        <figure class="visor__foto" id="d-pincho-1" style="--i: 1">
-          <span class="visor__ancla visor__ancla--izq" id="d-pincho-1-izq"></span><span class="visor__ancla visor__ancla--der" id="d-pincho-1-der"></span>
-          <img src="PINCHO logo fondo rojo.png" alt="PINCHO logo fondo rojo" loading="lazy">
-          <figcaption>PINCHO logo fondo rojo <span class="visor__contador">1 / 4</span></figcaption>
+        <figure class="visor__foto" id="d-mahou-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-1-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-1-der"></span>
+          <img src="mahou identidad 1.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">1 / 18</span></figcaption>
           <nav class="visor__tira" aria-label="Todas las fotos">
-            <a class="actual" href="#d-pincho-1"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
-            <a href="#d-pincho-2-der"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
-            <a href="#d-pincho-3-der"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
-            <a href="#d-pincho-4-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-1"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-der"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-der"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-der"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-der"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-der"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
           </nav>
-          <a class="flecha visor__cerrar" href="#mini-d-pincho-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
-          <a class="flecha visor__sig" href="#d-pincho-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
         </figure>
-        <figure class="visor__foto" id="d-pincho-2" style="--i: 2">
-          <span class="visor__ancla visor__ancla--izq" id="d-pincho-2-izq"></span><span class="visor__ancla visor__ancla--der" id="d-pincho-2-der"></span>
-          <img src="PINCHO fumón.png" alt="PINCHO fumón" loading="lazy">
-          <figcaption>PINCHO fumón <span class="visor__contador">2 / 4</span></figcaption>
+        <figure class="visor__foto" id="d-mahou-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-2-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-2-der"></span>
+          <img src="mahou identidad 2.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">2 / 18</span></figcaption>
           <nav class="visor__tira" aria-label="Todas las fotos">
-            <a href="#d-pincho-1-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
-            <a class="actual" href="#d-pincho-2"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
-            <a href="#d-pincho-3-der"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
-            <a href="#d-pincho-4-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-2"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-der"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-der"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-der"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-der"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
           </nav>
-          <a class="flecha visor__cerrar" href="#mini-d-pincho-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
-          <a class="flecha visor__ant" href="#d-pincho-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
-          <a class="flecha visor__sig" href="#d-pincho-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
         </figure>
-        <figure class="visor__foto" id="d-pincho-3" style="--i: 3">
-          <span class="visor__ancla visor__ancla--izq" id="d-pincho-3-izq"></span><span class="visor__ancla visor__ancla--der" id="d-pincho-3-der"></span>
-          <img src="PINCHO borrachín.png" alt="PINCHO borrachín" loading="lazy">
-          <figcaption>PINCHO borrachín <span class="visor__contador">3 / 4</span></figcaption>
+        <figure class="visor__foto" id="d-mahou-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-3-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-3-der"></span>
+          <img src="mahou identidad 3.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">3 / 18</span></figcaption>
           <nav class="visor__tira" aria-label="Todas las fotos">
-            <a href="#d-pincho-1-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
-            <a href="#d-pincho-2-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
-            <a class="actual" href="#d-pincho-3"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
-            <a href="#d-pincho-4-der"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-3"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-der"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-der"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-der"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
           </nav>
-          <a class="flecha visor__cerrar" href="#mini-d-pincho-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
-          <a class="flecha visor__ant" href="#d-pincho-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
-          <a class="flecha visor__sig" href="#d-pincho-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
         </figure>
-        <figure class="visor__foto" id="d-pincho-4" style="--i: 4">
-          <span class="visor__ancla visor__ancla--izq" id="d-pincho-4-izq"></span><span class="visor__ancla visor__ancla--der" id="d-pincho-4-der"></span>
-          <img src="PINCHO meón.png" alt="PINCHO meón" loading="lazy">
-          <figcaption>PINCHO meón <span class="visor__contador">4 / 4</span></figcaption>
+        <figure class="visor__foto" id="d-mahou-4" style="--i: 4">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-4-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-4-der"></span>
+          <img src="mahou identidad 4.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">4 / 18</span></figcaption>
           <nav class="visor__tira" aria-label="Todas las fotos">
-            <a href="#d-pincho-1-izq"><img src="PINCHO logo fondo rojo.png" alt="" loading="lazy"></a>
-            <a href="#d-pincho-2-izq"><img src="PINCHO fumón.png" alt="" loading="lazy"></a>
-            <a href="#d-pincho-3-izq"><img src="PINCHO borrachín.png" alt="" loading="lazy"></a>
-            <a class="actual" href="#d-pincho-4"><img src="PINCHO meón.png" alt="" loading="lazy"></a>
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-4"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-der"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-der"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
           </nav>
-          <a class="flecha visor__cerrar" href="#mini-d-pincho-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
-          <a class="flecha visor__ant" href="#d-pincho-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-5-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-5" style="--i: 5">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-5-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-5-der"></span>
+          <img src="mahou identidad 5.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">5 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-5"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-der"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-5" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-4-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-6-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-6" style="--i: 6">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-6-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-6-der"></span>
+          <img src="mahou identidad 6.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">6 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-6"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-der"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-6" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-5-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-7-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-7" style="--i: 7">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-7-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-7-der"></span>
+          <img src="mahou identidad 7.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">7 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-7"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-der"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-7" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-6-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-8-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-8" style="--i: 8">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-8-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-8-der"></span>
+          <img src="mahou identidad 8.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">8 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-8"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-der"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-8" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-7-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-9-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-9" style="--i: 9">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-9-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-9-der"></span>
+          <img src="mahou identidad 9.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">9 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-9"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-der"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-9" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-8-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-10-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-10" style="--i: 10">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-10-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-10-der"></span>
+          <img src="mahou identidad 10.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">10 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-10"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-der"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-10" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-9-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-11-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-11" style="--i: 11">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-11-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-11-der"></span>
+          <img src="mahou identidad 11.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">11 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-11"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-der"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-11" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-10-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-12-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-12" style="--i: 12">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-12-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-12-der"></span>
+          <img src="mahou identidad 12.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">12 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-12"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-der"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-12" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-11-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-13-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-13" style="--i: 13">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-13-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-13-der"></span>
+          <img src="mahou identidad 13.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">13 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-13"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-der"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-13" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-12-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-14-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-14" style="--i: 14">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-14-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-14-der"></span>
+          <img src="mahou identidad 14.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">14 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-izq"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-14"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-der"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-14" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-13-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-15-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-15" style="--i: 15">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-15-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-15-der"></span>
+          <img src="mahou identidad 15.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">15 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-izq"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-izq"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-15"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-der"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-15" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-14-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-16-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-16" style="--i: 16">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-16-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-16-der"></span>
+          <img src="mahou identidad 16.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">16 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-izq"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-izq"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-izq"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-16"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-der"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-16" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-15-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-17-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-17" style="--i: 17">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-17-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-17-der"></span>
+          <img src="mahou identidad 17.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">17 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-izq"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-izq"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-izq"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-izq"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-17"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-18-der"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-17" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-16-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-mahou-18-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-mahou-18" style="--i: 18">
+          <span class="visor__ancla visor__ancla--izq" id="d-mahou-18-izq"></span><span class="visor__ancla visor__ancla--der" id="d-mahou-18-der"></span>
+          <img src="mahou identidad 18.jpg" alt="Identidad visual" loading="lazy">
+          <figcaption>Identidad visual <span class="visor__contador">18 / 18</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-mahou-1-izq"><img src="mahou identidad 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-2-izq"><img src="mahou identidad 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-3-izq"><img src="mahou identidad 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-4-izq"><img src="mahou identidad 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-5-izq"><img src="mahou identidad 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-6-izq"><img src="mahou identidad 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-7-izq"><img src="mahou identidad 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-8-izq"><img src="mahou identidad 8.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-9-izq"><img src="mahou identidad 9.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-10-izq"><img src="mahou identidad 10.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-11-izq"><img src="mahou identidad 11.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-12-izq"><img src="mahou identidad 12.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-13-izq"><img src="mahou identidad 13.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-14-izq"><img src="mahou identidad 14.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-15-izq"><img src="mahou identidad 15.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-16-izq"><img src="mahou identidad 16.jpg" alt="" loading="lazy"></a>
+            <a href="#d-mahou-17-izq"><img src="mahou identidad 17.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-mahou-18"><img src="mahou identidad 18.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-mahou-18" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-mahou-17-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
         </figure>
       </div>
 
       <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
-      <a class="flecha flecha--arriba" href="#d-pincho" aria-label="Volver arriba">
+      <a class="flecha flecha--arriba" href="#d-mahou" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== DESTACADO: FOODCARE (copia que vuelve a Destacados; si cambias el texto, cámbialo también en su categoría) ===== -->
+    <section class="galeria proyecto" id="d-foodcare">
+      <div class="galeria__cabecera">
+        <h1 class="titulo">FOODCARE</h1>
+
+        <!-- Flecha hacia la izquierda (fija): vuelve atrás -->
+        <a class="flecha" href="#destacados" aria-label="Volver a Destacados">
+          <svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
+
+      <p class="proyecto__frase">Desarrollo de aplicación de tipo tracker para Android.</p>
+
+      <div class="proyecto__bloque">
+        <h2>Desarrollo creativo</h2>
+        <p>El objetivo era desarrollar completamente una app de tipo tracker. Elegimos llevar a cabo una aplicación en la que se podían crear y descubrir recetas, a la vez que llevar un registro de la dieta que uno lleva. Elegimos enfocarlo a un tono healthy, llamándolo FOODCARE y teniendo tonos verdes. Lo prototipamos en Figma y luego lo pasamos a código.</p>
+      </div>
+
+      <div class="proyecto__bloque">
+        <h2>Previsualización de la app</h2>
+        <div class="proyecto__imagenes proyecto__imagenes--movil">
+        <a class="placeholder" id="mini-d-foodcare-1" href="#d-foodcare-1"><img src="foodcare pantalla 1.jpg" alt="Bienvenida" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-foodcare-2" href="#d-foodcare-2"><img src="foodcare pantalla 2.jpg" alt="Inicio" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-foodcare-3" href="#d-foodcare-3"><img src="foodcare pantalla 3.jpg" alt="Receta" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-foodcare-4" href="#d-foodcare-4"><img src="foodcare pantalla 4.jpg" alt="Descubrir" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-foodcare-5" href="#d-foodcare-5"><img src="foodcare pantalla 5.jpg" alt="Mi diario" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-foodcare-6" href="#d-foodcare-6"><img src="foodcare pantalla 6.jpg" alt="Plan semanal" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-foodcare-7" href="#d-foodcare-7"><img src="foodcare pantalla 7.jpg" alt="Mi mascota" loading="lazy"></a>
+        <a class="placeholder" id="mini-d-foodcare-8" href="#d-foodcare-8"><img src="foodcare pantalla 8.jpg" alt="Perfil" loading="lazy"></a>
+        </div>
+      </div>
+
+      <!-- VISOR: al pulsar una miniatura se abre aquí en grande, con su pie de foto.
+           Desliza a izquierda o derecha para pasar de foto (en ordenador, con las flechas).
+           El texto de cada <figcaption> es el pie de foto: cámbialo por el tuyo.
+           Cada foto lleva debajo la fila de miniaturas, con la suya en el centro
+           (style="--i: 3" = posición de la foto; "actual" = la miniatura resaltada). -->
+      <div class="visor">
+        <figure class="visor__foto" id="d-foodcare-1" style="--i: 1">
+          <span class="visor__ancla visor__ancla--izq" id="d-foodcare-1-izq"></span><span class="visor__ancla visor__ancla--der" id="d-foodcare-1-der"></span>
+          <img src="foodcare pantalla 1.jpg" alt="Bienvenida" loading="lazy">
+          <figcaption>Bienvenida <span class="visor__contador">1 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a class="actual" href="#d-foodcare-1"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-2-der"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-3-der"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-4-der"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-5-der"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-6-der"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-foodcare-1" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__sig" href="#d-foodcare-2-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-foodcare-2" style="--i: 2">
+          <span class="visor__ancla visor__ancla--izq" id="d-foodcare-2-izq"></span><span class="visor__ancla visor__ancla--der" id="d-foodcare-2-der"></span>
+          <img src="foodcare pantalla 2.jpg" alt="Inicio" loading="lazy">
+          <figcaption>Inicio <span class="visor__contador">2 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-foodcare-2"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-3-der"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-4-der"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-5-der"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-6-der"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-foodcare-2" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-foodcare-1-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-foodcare-3-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-foodcare-3" style="--i: 3">
+          <span class="visor__ancla visor__ancla--izq" id="d-foodcare-3-izq"></span><span class="visor__ancla visor__ancla--der" id="d-foodcare-3-der"></span>
+          <img src="foodcare pantalla 3.jpg" alt="Receta" loading="lazy">
+          <figcaption>Receta <span class="visor__contador">3 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-foodcare-3"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-4-der"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-5-der"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-6-der"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-foodcare-3" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-foodcare-2-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-foodcare-4-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-foodcare-4" style="--i: 4">
+          <span class="visor__ancla visor__ancla--izq" id="d-foodcare-4-izq"></span><span class="visor__ancla visor__ancla--der" id="d-foodcare-4-der"></span>
+          <img src="foodcare pantalla 4.jpg" alt="Descubrir" loading="lazy">
+          <figcaption>Descubrir <span class="visor__contador">4 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-3-izq"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-foodcare-4"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-5-der"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-6-der"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-foodcare-4" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-foodcare-3-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-foodcare-5-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-foodcare-5" style="--i: 5">
+          <span class="visor__ancla visor__ancla--izq" id="d-foodcare-5-izq"></span><span class="visor__ancla visor__ancla--der" id="d-foodcare-5-der"></span>
+          <img src="foodcare pantalla 5.jpg" alt="Mi diario" loading="lazy">
+          <figcaption>Mi diario <span class="visor__contador">5 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-3-izq"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-4-izq"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-foodcare-5"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-6-der"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-foodcare-5" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-foodcare-4-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-foodcare-6-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-foodcare-6" style="--i: 6">
+          <span class="visor__ancla visor__ancla--izq" id="d-foodcare-6-izq"></span><span class="visor__ancla visor__ancla--der" id="d-foodcare-6-der"></span>
+          <img src="foodcare pantalla 6.jpg" alt="Plan semanal" loading="lazy">
+          <figcaption>Plan semanal <span class="visor__contador">6 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-3-izq"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-4-izq"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-5-izq"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-foodcare-6"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-7-der"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-foodcare-6" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-foodcare-5-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-foodcare-7-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-foodcare-7" style="--i: 7">
+          <span class="visor__ancla visor__ancla--izq" id="d-foodcare-7-izq"></span><span class="visor__ancla visor__ancla--der" id="d-foodcare-7-der"></span>
+          <img src="foodcare pantalla 7.jpg" alt="Mi mascota" loading="lazy">
+          <figcaption>Mi mascota <span class="visor__contador">7 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-3-izq"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-4-izq"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-5-izq"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-6-izq"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-foodcare-7"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-8-der"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-foodcare-7" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-foodcare-6-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+          <a class="flecha visor__sig" href="#d-foodcare-8-der" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        </figure>
+        <figure class="visor__foto" id="d-foodcare-8" style="--i: 8">
+          <span class="visor__ancla visor__ancla--izq" id="d-foodcare-8-izq"></span><span class="visor__ancla visor__ancla--der" id="d-foodcare-8-der"></span>
+          <img src="foodcare pantalla 8.jpg" alt="Perfil" loading="lazy">
+          <figcaption>Perfil <span class="visor__contador">8 / 8</span></figcaption>
+          <nav class="visor__tira" aria-label="Todas las fotos">
+            <a href="#d-foodcare-1-izq"><img src="foodcare pantalla 1.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-2-izq"><img src="foodcare pantalla 2.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-3-izq"><img src="foodcare pantalla 3.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-4-izq"><img src="foodcare pantalla 4.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-5-izq"><img src="foodcare pantalla 5.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-6-izq"><img src="foodcare pantalla 6.jpg" alt="" loading="lazy"></a>
+            <a href="#d-foodcare-7-izq"><img src="foodcare pantalla 7.jpg" alt="" loading="lazy"></a>
+            <a class="actual" href="#d-foodcare-8"><img src="foodcare pantalla 8.jpg" alt="" loading="lazy"></a>
+          </nav>
+          <a class="flecha visor__cerrar" href="#mini-d-foodcare-8" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+          <a class="flecha visor__ant" href="#d-foodcare-7-izq" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M20 12H4M11 5l-7 7 7 7"/></svg></a>
+        </figure>
+      </div>
+
+      <!-- Flecha hacia arriba (sticky): vuelve al inicio de la página -->
+      <a class="flecha flecha--arriba" href="#d-foodcare" aria-label="Volver arriba">
         <svg viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>
       </a>
     </section>
